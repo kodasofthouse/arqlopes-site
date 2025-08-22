@@ -177,7 +177,7 @@ export default function Hero() {
                             <h1
                                 className={
                                     spaceGrotesk.className +
-                                    " text-4xl min-[1536px]:text-[60px] min-[1537px]:text-[83px] text-white font-light pb-8 leading-tight"
+                                    " text-4xl min-[1536px]:text-[60px] min-[1537px]:text-[66px] text-white font-light pb-8 leading-tight"
                                 }
                             >
                                 Obras que
@@ -192,12 +192,12 @@ export default function Hero() {
                                 </span>
                             </h1>
 
-                            <p className="text-[18px] lg:text-[26px] text-[#d9d9d9] leading-relaxed pb-10 whitespace-normal">
+                            <p className="text-[18px] lg:text-[22px] text-[#d9d9d9] leading-relaxed pb-10 whitespace-normal">
                                 Alta performance, rigor técnico e acabamento
                                 impecável são nossas marcas registradas.
                             </p>
 
-                            <Button className="bg-white text-[#181C20] text-[20px] lg:text-[27.62px] hover:bg-[#d9d9d9] rounded-none font-medium h-[60px] lg:h-[79px] w-full lg:w-[366px]">
+                            <Button className="bg-white text-[#181C20] text-lg hover:bg-[#d9d9d9] rounded-none font-medium px-10 py-8">
                                 Faça um orçamento
                             </Button>
                         </div>
@@ -216,8 +216,8 @@ export default function Hero() {
                 id="features"
                 className="max-w-6xl mx-auto relative z-20 -mt-24 px-4"
             >
-                <div className="flex flex-col lg:flex-row gap-4">
-                    <div className="bg-[#045D66] px-6 pt-10 pb-8 text-white flex-1">
+                <div className="flex flex-col lg:flex-row">
+                    <div className="bg-[#045D66] px-8 pt-10 pb-8 text-white flex-1">
                         <div className="mb-6">
                             <Image
                                 src={ComercialConstructionIcon}
@@ -228,12 +228,12 @@ export default function Hero() {
                         <h3
                             className={
                                 spaceGrotesk.className +
-                                " mb-4 text-[20px] lg:text-[22.52px] leading-[32px] font-semibold"
+                                " mb-4 text-[20px] lg:text-[22px] leading-[32px] font-semibold"
                             }
                         >
                             Obras Comerciais
                         </h3>
-                        <p className="text-[16px] lg:text-[18px] leading-relaxed mb-6 whitespace-normal">
+                        <p className="text-[16px] lg:text-[16px] leading-relaxed mb-6 whitespace-normal">
                             Execução completa para franquias, lojas e
                             restaurantes. Já realizamos obras para marcas como
                             Burger King e Data Energia.
@@ -249,7 +249,7 @@ export default function Hero() {
                         </Link>
                     </div>
 
-                    <div className="bg-transparent px-6 pt-10 pb-8 text-white flex-1">
+                    <div className="bg-vermelho2 px-8 pt-10 pb-8 text-white flex-1">
                         <div className="mb-6">
                             <Image
                                 src={ResidentialConstructionIcon}
@@ -260,18 +260,18 @@ export default function Hero() {
                         <h3
                             className={
                                 spaceGrotesk.className +
-                                " mb-4 text-[20px] lg:text-[22.52px] leading-[32px] font-semibold"
+                                " mb-4 text-[20px] lg:text-[22px] leading-[32px] font-semibold"
                             }
                         >
                             Construções Residenciais
                         </h3>
-                        <p className="text-[16px] lg:text-[18px] leading-relaxed mb-6 whitespace-normal">
+                        <p className="text-[16px] lg:text-[16px] leading-relaxed mb-6 whitespace-normal">
                             Casas, edifícios e condomínios de alto padrão, com
                             foco em durabilidade, beleza e conforto.
                         </p>
                     </div>
 
-                    <div className="bg-transparent px-6 pt-10 pb-8 text-white flex-1">
+                    <div className="bg-amarelo px-8 pt-10 pb-8 text-white flex-1">
                         <div className="mb-6">
                             <Image
                                 src={RenovationIcon}
@@ -282,12 +282,12 @@ export default function Hero() {
                         <h3
                             className={
                                 spaceGrotesk.className +
-                                " mb-4 text-[20px] lg:text-[22.52px] leading-[32px] font-semibold"
+                                " mb-4 text-[20px] lg:text-[22px] leading-[32px] font-semibold"
                             }
                         >
-                            Reformas Técnicas e Ampliações
+                            Reformas Técnicas
                         </h3>
-                        <p className="text-[16px] lg:text-[18px] leading-relaxed mb-6 whitespace-normal">
+                        <p className="text-[16px] lg:text-[16px] leading-relaxed mb-6 whitespace-normal">
                             Requalificações estruturais e remodelações com
                             mínimo impacto e máximo cuidado com o espaço já
                             existente.

@@ -39,7 +39,7 @@ export default function About() {
                             Somos a ArqLopes
                         </h1>
 
-                        <p className="text-[16px] lg:text-[18.35px] text-[#181D23] leading-relaxed whitespace-normal">
+                        <p className="text-[16px] lg:text-[18px] text-[#181D23] leading-relaxed whitespace-normal">
                             Com sede em Belo Horizonte e atuação em todo o
                             estado de Minas Gerais, a ArqLopes nasceu da visão
                             do engenheiro Rafael Lopes, trazendo em seu DNA o

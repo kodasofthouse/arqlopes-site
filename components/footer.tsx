@@ -69,7 +69,7 @@ export default function Footer() {
                 <div className="flex flex-col lg:flex-row w-full justify-between gap-12 mb-16">
                     <div className="space-y-[66.74px] w-full">
                         <h2
-                            className={`${spaceGrotesk.className} text-3xl lg:text-[45px] font-medium leading-tight text-center lg:text-left`}
+                            className={`${spaceGrotesk.className} text-3xl lg:text-[36px] font-medium leading-tight text-center lg:text-left`}
                         >
                             Quer dar início à sua obra
                             <br />
@@ -90,7 +90,7 @@ export default function Footer() {
                                     alt="Ícone de reforma"
                                     className="w-[38px] h-[38px]"
                                 />
-                                <span className="text-[22px] lg:text-[28px]">
+                                <span className="text-[22px] lg:text-[22px]">
                                     (31) 97203-1160
                                 </span>
                             </div>
@@ -101,7 +101,7 @@ export default function Footer() {
                                     alt="Ícone de e-mail"
                                     className="w-[38px] h-[38px]"
                                 />
-                                <span className="text-[22px] lg:text-[28px]">
+                                <span className="text-[22px] lg:text-[22px]">
                                     contato@arqlopes.com.br
                                 </span>
                             </div>
@@ -112,7 +112,7 @@ export default function Footer() {
                                     alt="Ícone de localização"
                                     className="w-[38px] h-[38px]"
                                 />
-                                <div className="text-[22px] lg:text-[28px]">
+                                <div className="text-[22px] lg:text-[22px]">
                                     <div>Rua Hidra, 301, Sala 304</div>
                                     <div>Belo Horizonte</div>
                                 </div>
@@ -121,14 +121,14 @@ export default function Footer() {
                     </div>
 
                     <div className="bg-[#5d5d5d] p-[32px] lg:p-[42px] w-full lg:w-[1000px] md:w-[852px] h-auto lg:h-[607px] md:h-[607px] mx-auto lg:mr-[66px]">
-                        <div className="text-center mb-6 -gap-2">
+                        <div className="text-center mb-10 -gap-2">
                             <p
-                                className={`${spaceGrotesk.className} text-[22px] lg:text-[25px] text-white`}
+                                className={`${spaceGrotesk.className} text-[32px] lg:text-[36px] text-white`}
                             >
                                 Dúvidas?
                             </p>
                             <h3
-                                className={`${spaceGrotesk.className} text-[32px] lg:text-[44.59px] font-semibold text-white`}
+                                className={`${spaceGrotesk.className} text-[22px] lg:text-[26px] font-semibold text-white`}
                             >
                                 Fale com a gente
                             </h3>
@@ -176,7 +176,7 @@ export default function Footer() {
                                 placeholder="Prazer, qual seu nome?"
                                 required
                                 disabled={isPending}
-                                className="bg-transparent border-[1.25px] pl-[38px] border-[#a78f62] text-white placeholder:text-white placeholder:text-[18px] h-[60px] lg:h-[74.75px] rounded-none disabled:opacity-50"
+                                className="bg-transparent border-[1.25px] pl-[26px] border-[#a78f62] text-white placeholder:text-white placeholder:text-[18px] py-8 rounded-none disabled:opacity-50"
                             />
                             <Input
                                 name="email"
@@ -184,7 +184,7 @@ export default function Footer() {
                                 type="email"
                                 required
                                 disabled={isPending}
-                                className="bg-transparent border-[1.25px] pl-[38px] border-[#a78f62] text-white placeholder:text-white placeholder:text-[18px] h-[60px] lg:h-[74.75px] rounded-none disabled:opacity-50"
+                                className="bg-transparent border-[1.25px] pl-[26px] border-[#a78f62] text-white placeholder:text-white placeholder:text-[18px] py-8 rounded-none disabled:opacity-50"
                             />
                             <Input
                                 name="phone"
@@ -193,13 +193,13 @@ export default function Footer() {
                                 required
                                 disabled={isPending}
                                 maxLength={15}
-                                className="bg-transparent border-[1.25px] pl-[38px] border-[#a78f62] text-white placeholder:text-white placeholder:text-[18px] h-[60px] lg:h-[74.75px] rounded-none disabled:opacity-50"
+                                className="bg-transparent border-[1.25px] pl-[26px] border-[#a78f62] text-white placeholder:text-white placeholder:text-[18px] py-8 rounded-none disabled:opacity-50"
                             />
                             {!message && (
                                 <Button
                                     type="submit"
                                     disabled={isPending}
-                                    className="w-full lg:w-[258.51px] h-[50px] lg:h-[57.26px] bg-white text-black text-[18px] hover:bg-gray-200 font-medium border-[1.34px] border-[#A78F62] disabled:opacity-50 disabled:cursor-not-allowed"
+                                    className="w-full lg:w-[258.51px] h-[50px] lg:h-[57.26px] bg-white text-black text-[18px] hover:bg-gray-200 font-medium border-[1.34px] border-[#A78F62] disabled:opacity-50 disabled:cursor-not-allowed py-8 rounded-none"
                                 >
                                     {isPending
                                         ? "Enviando..."
@@ -220,7 +220,7 @@ export default function Footer() {
                         />
 
                         <p
-                            className="text-[18px] lg:text-[21px]"
+                            className="text-[18px] lg:text-[18px]"
                             style={{ lineHeight: "180%" }}
                         >
                             <span className="font-bold ">
@@ -248,11 +248,11 @@ export default function Footer() {
 
                     <div className="mt-10 lg:mt-[70px] text-center lg:text-left w-full">
                         <h4
-                            className={`${spaceGrotesk.className} text-[22px] lg:text-[26px] font-medium mb-6`}
+                            className={`${spaceGrotesk.className} text-[22px] lg:text-[22px] font-medium mb-6`}
                         >
                             Acesso Rápido
                         </h4>
-                        <nav className="space-y-4 text-[18px] lg:text-[21px]">
+                        <nav className="space-y-4 text-[18px] lg:text-[18px]">
                             <div>
                                 <button
                                     onClick={() => handleScrollTo("hero")}
@@ -298,16 +298,16 @@ export default function Footer() {
 
                     <div className="mt-10 lg:mt-[70px] w-full text-center lg:text-left">
                         <h4
-                            className={`${spaceGrotesk.className} text-[22px] lg:text-[26px] font-semibold mb-6`}
+                            className={`${spaceGrotesk.className} text-[22px] lg:text-[22px] font-semibold mb-6`}
                         >
                             Quer saber das novidades?
                         </h4>
                         <div className="space-y-4 lg:space-y-[27px] flex flex-col items-center lg:items-start">
                             <Input
                                 placeholder="Seu melhor email"
-                                className="bg-white text-[#161616] text-[18px] lg:text-[21px] w-full max-w-[500px] h-[60px] lg:h-[80px] border border-[#FBB404] rounded-none placeholder:font-bold placeholder:text-[#161616] pl-4"
+                                className="bg-white text-[#161616] text-[18px] lg:text-[18px] w-full max-w-[500px] h-[60px] lg:h-[80px] border border-[#FBB404] rounded-none placeholder:font-bold placeholder:text-[#161616] pl-4"
                             />
-                            <Button className="bg-white text-[#020202] hover:bg-gray-100 font-medium border border-[#A78F62] w-full max-w-[237px] h-[50px] lg:h-[61px] text-[18px] lg:text-[21px] rounded-none border-[1.34px] border-[#A78F62]">
+                            <Button className="bg-white text-[#020202] hover:bg-gray-100 font-medium border border-[#A78F62] w-full max-w-[237px] h-[50px] lg:h-[61px] text-[18px] lg:text-[18px] rounded-none border-[1.34px] border-[#A78F62]">
                                 Ficar informado
                             </Button>
                         </div>
@@ -315,8 +315,8 @@ export default function Footer() {
                 </div>
 
                 <div className="text-center pt-[61px] lg:pt-[121px] pb-[61px]">
-                    <p className="text-[18px] lg:text-[21px] font-regular text-white">
-                        © 2024 Projeto Desenvolvido por{" "}
+                    <p className="text-[18px] lg:text-[18px] font-regular text-white">
+                        © {new Date().getFullYear()} Projeto Desenvolvido por{" "}
                         <span className="font-black text-[#F9F0D9]">
                             Insiders
                         </span>

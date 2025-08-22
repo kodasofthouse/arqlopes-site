@@ -41,7 +41,7 @@ export default function Navbar() {
         <header>
             <div
                 className={clsx(
-                    "px-6 py-[40px] fixed top-0 left-0 w-full z-40 transition-all duration-300",
+                    "px-6 py-5 fixed top-0 left-0 w-full z-40 transition-all duration-300",
                     {
                         "backdrop-blur-md bg-black/20": hasScrolled,
                         "bg-transparent": !hasScrolled,
@@ -59,7 +59,7 @@ export default function Navbar() {
                         </Link>
                     </div>
 
-                    <div className="hidden md:flex min-[1536px]:text-xl min-[1537px]:text-[21px] items-center space-x-10">
+                    <div className="hidden md:flex min-[1536px]:text-lg min-[1537px]:text-[17px] items-center space-x-10">
                         <button
                             onClick={() => handleScrollTo("hero")}
                             className="text-white hover:text-[#d9d9d9] transition-colors"
@@ -94,7 +94,7 @@ export default function Navbar() {
 
                     <Button
                         onClick={() => {}}
-                        className="bg-white text-[21.37px] text-[#191919] font-medium hover:bg-[#d9d9d9] hidden md:flex rounded-none border-[1.34px] border-[#7C6B4D] w-[283px] h-[61px]"
+                        className="bg-white text-[16px] text-[#191919] font-medium hover:bg-[#d9d9d9] hidden md:flex rounded-none px-8 py-6"
                     >
                         Faça um orçamento
                     </Button>
@@ -145,7 +145,7 @@ export default function Navbar() {
                     <button onClick={() => {}}>Orçamento</button>
                     <Button
                         onClick={() => {}}
-                        className="mt-8 bg-white text-[#191919] font-medium hover:bg-[#d9d9d9] rounded-none border border-[#7C6B4D] w-full h-[50px]"
+                        className="mt-8 bg-white text-[#191919] font-medium hover:bg-[#d9d9d9] rounded-none border border-[#7C6B4D] w-full h-[40px]"
                     >
                         Faça um orçamento
                     </Button>

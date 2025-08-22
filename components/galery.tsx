@@ -139,7 +139,7 @@ export default function Galery() {
                             realizamos projetos com propósito.
                         </p>
                         <p
-                            className=" text-md lg:text-[21.37px] text-[#181D23] text-center leading-relaxed lg:text-nowrap pb-[58px] lg:px-0 px-8"
+                            className=" text-md lg:text-[18px] text-[#181D23] text-center leading-relaxed lg:text-nowrap pb-[58px] lg:px-0 px-8"
                             style={{ lineHeight: "180%" }}
                         >
                             Conheça alguns dos projetos que a Arqlopes

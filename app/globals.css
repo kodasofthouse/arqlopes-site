@@ -1,6 +1,58 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+@plugin "tailwindcss-animate";
+
+@theme {
+  --color-amarelo: #fcb404;
+  --color-vermelho2: #e73823;
+  --color-vermelho: #c70a0b;
+  --color-azul: #045B64;
+
+  --color-main-green-50: #ebfef6;
+  --color-main-green-100: #cffce8;
+  --color-main-green-200: #a4f6d5;
+  --color-main-green-300: #a4f6d5;
+  --color-main-green-400: #a4f6d5;
+  --color-main-green-500: #09B285;
+  --color-main-green-600: #009b75;
+  --color-main-green-700: #007c61;
+  --color-main-green-800: #03624d;
+  --color-main-green-900: #035141;
+  --color-main-green-950: #002e26;
+
+  --color-main-yellow-50: #fff8eb;
+  --color-main-yellow-100: #ffeac6;
+  --color-main-yellow-200: #ffc86b;
+  --color-main-yellow-300: #ffb64a;
+  --color-main-yellow-400: #ff9b20;
+  --color-main-yellow-500: #f97507;
+  --color-main-yellow-600: #dd5102;
+  --color-main-yellow-700: #b73506;
+  --color-main-yellow-800: #94280c;
+  --color-main-yellow-900: #7a210d;
+  --color-main-yellow-950: #460e02;
+
+  --color-border: hsl(var(--border));
+  --color-input: hsl(var(--input));
+  --color-ring: hsl(var(--ring));
+  --color-background: hsl(var(--background));
+  --color-foreground: hsl(var(--foreground));
+  --color-primary: hsl(175 70% 41%);
+  --color-primary-foreground: hsl(210 40% 98%);
+  --color-secondary: hsl(var(--secondary));
+  --color-secondary-foreground: hsl(var(--secondary-foreground));
+  --color-destructive: hsl(var(--destructive));
+  --color-destructive-foreground: hsl(var(--destructive-foreground));
+  --color-muted: hsl(var(--muted));
+  --color-muted-foreground: hsl(var(--muted-foreground));
+  --color-accent: hsl(var(--accent));
+  --color-accent-foreground: hsl(var(--accent-foreground));
+  --color-popover: hsl(var(--popover));
+  --color-popover-foreground: hsl(var(--popover-foreground));
+  --color-card: hsl(var(--card));
+  --color-card-foreground: hsl(var(--card-foreground));
+
+  --radius: var(--radius);
+}
 
 html,
 body {
