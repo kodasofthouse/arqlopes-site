@@ -29,9 +29,7 @@ export async function getContent<K extends ContentSection>(
 ): Promise<ContentTypeMap[K]> {
   const url = `${R2_PUBLIC_URL}/content/${section}.json`;
   
-  const response = await fetch(url, {
-    next: { revalidate: CONTENT_CACHE_TTL_SECONDS },
-  });
+  const response = await fetch(url);
   
   if (!response.ok) {
     throw new Error(`Failed to fetch ${section}: ${response.status} ${response.statusText}`);
