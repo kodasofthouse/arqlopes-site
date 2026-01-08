@@ -3,6 +3,9 @@ compatibility_date = "2024-01-01"
 compatibility_flags = ["nodejs_compat"]
 pages_build_output_dir = ".vercel/output/static"
 
+[vars]
+NEXT_PUBLIC_R2_URL = "https://pub-9def9de695584c4c8300c62ce8af1bbd.r2.dev"
+
 [[r2_buckets]]
 binding = "R2_ASSETS"
 bucket_name = "arqlopes-assets"
