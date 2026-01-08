@@ -9,7 +9,7 @@ import { isValidSection } from '@/lib/validation';
 import { CONTENT_CACHE_TTL_SECONDS, VALIDATION_MESSAGES } from '@/lib/api-config';
 import type { ContentSection } from '@/types/content';
 
-export const runtime = 'edge';
+
 
 interface RouteParams {
   params: Promise<{

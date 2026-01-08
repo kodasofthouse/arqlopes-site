@@ -7,7 +7,7 @@ import { NextResponse } from 'next/server';
 import { getAllContent } from '@/lib/content';
 import { CONTENT_CACHE_TTL_SECONDS } from '@/lib/api-config';
 
-export const runtime = 'edge';
+
 
 export async function GET(): Promise<Response> {
   try {

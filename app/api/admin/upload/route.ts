@@ -12,7 +12,7 @@ import type { CloudflareEnv } from '@/lib/r2';
 import type { AllowedImageMimeType } from '@/lib/api-config';
 import { IMAGE_FOLDERS, type ImageFolder, type UploadResponse } from '@/types/content';
 
-export const runtime = 'edge';
+
 
 export async function POST(request: Request): Promise<Response> {
   const authResult = requireAuth(request);

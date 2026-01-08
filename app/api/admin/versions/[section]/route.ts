@@ -10,7 +10,7 @@ import { listVersions } from '@/lib/versioning';
 import type { CloudflareEnv } from '@/lib/r2';
 import type { ContentSection } from '@/types/content';
 
-export const runtime = 'edge';
+
 
 interface RouteContext {
   params: Promise<{

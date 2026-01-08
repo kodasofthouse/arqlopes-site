@@ -8,7 +8,7 @@ import { VALIDATION_MESSAGES, R2_PATHS } from '@/lib/api-config';
 import { softDeleteFromR2 } from '@/lib/r2';
 import type { CloudflareEnv } from '@/lib/r2';
 
-export const runtime = 'edge';
+
 
 interface RouteContext {
   params: Promise<{

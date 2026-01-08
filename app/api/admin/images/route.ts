@@ -9,7 +9,7 @@ import { listImagesFromR2, listImageFoldersFromR2 } from '@/lib/r2';
 import type { CloudflareEnv } from '@/lib/r2';
 import type { ImageListResponse } from '@/types/content';
 
-export const runtime = 'edge';
+
 
 export async function GET(request: Request): Promise<Response> {
   const authResult = requireAuth(request);
