@@ -3,7 +3,7 @@
  * Fetches content from R2 with caching support
  */
 
-import { CONTENT_CACHE_TTL_SECONDS } from './api-config';
+import { CONTENT_CACHE_TTL_SECONDS, R2_PUBLIC_URL } from './api-config';
 import type {
   ContentSection,
   ContentTypeMap,
@@ -17,23 +17,6 @@ import type {
 } from '@/types/content';
 
 // ============================================================================
-// Configuration
-// ============================================================================
-
-/**
- * R2 Base URL from environment
- * Falls back to empty string for build-time type safety
- */
-function getR2BaseUrl(): string {
-  const url = process.env.NEXT_PUBLIC_R2_URL;
-  if (!url) {
-    console.warn('NEXT_PUBLIC_R2_URL is not configured');
-    return '';
-  }
-  return url;
-}
-
-// ============================================================================
 // Generic Content Fetcher
 // ============================================================================
 
@@ -44,13 +27,7 @@ function getR2BaseUrl(): string {
 export async function getContent<K extends ContentSection>(
   section: K
 ): Promise<ContentTypeMap[K]> {
-  const baseUrl = getR2BaseUrl();
-  
-  if (!baseUrl) {
-    throw new Error('R2 URL is not configured');
-  }
-  
-  const url = `${baseUrl}/content/${section}.json`;
+  const url = `${R2_PUBLIC_URL}/content/${section}.json`;
   
   const response = await fetch(url, {
     next: { revalidate: CONTENT_CACHE_TTL_SECONDS },
@@ -166,13 +143,7 @@ export async function getContentWithFallback<K extends ContentSection>(
 export async function getFreshContent<K extends ContentSection>(
   section: K
 ): Promise<ContentTypeMap[K]> {
-  const baseUrl = getR2BaseUrl();
-  
-  if (!baseUrl) {
-    throw new Error('R2 URL is not configured');
-  }
-  
-  const url = `${baseUrl}/content/${section}.json`;
+  const url = `${R2_PUBLIC_URL}/content/${section}.json`;
   
   const response = await fetch(url, {
     cache: 'no-store',

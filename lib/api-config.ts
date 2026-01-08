@@ -54,8 +54,11 @@ export const CONTENT_CACHE_TTL_SECONDS = 60;
 export const IMAGE_CACHE_TTL_SECONDS = 31536000;
 
 // ============================================================================
-// R2 Paths
+// R2 Configuration
 // ============================================================================
+
+/** Public R2 bucket URL for content delivery */
+export const R2_PUBLIC_URL = 'https://pub-9def9de695584c4c8300c62ce8af1bbd.r2.dev';
 
 export const R2_PATHS = {
   CONTENT: 'content',

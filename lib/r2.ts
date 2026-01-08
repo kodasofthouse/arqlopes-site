@@ -5,6 +5,7 @@
 
 import {
   R2_PATHS,
+  R2_PUBLIC_URL,
   generateTrashKey,
   ALLOWED_IMAGE_MIME_TYPES,
   IMAGE_CACHE_TTL_SECONDS,
@@ -198,7 +199,7 @@ export async function listImagesFromR2(
       if (contentType && ALLOWED_IMAGE_MIME_TYPES.includes(contentType as AllowedImageMimeType)) {
         images.push({
           key: obj.key,
-          url: `${process.env.NEXT_PUBLIC_R2_URL}/${obj.key}`,
+          url: `${R2_PUBLIC_URL}/${obj.key}`,
           size: obj.size,
           lastModified: obj.uploaded.toISOString(),
           contentType,
