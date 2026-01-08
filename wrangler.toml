@@ -5,6 +5,9 @@ main = ".open-next/worker.js"
 compatibility_date = "2025-01-01"
 compatibility_flags = ["nodejs_compat"]
 
+# Pages build output directory
+pages_build_output_dir = ".open-next/assets"
+
 # Static assets
 assets = { directory = ".open-next/assets", binding = "ASSETS" }
 
