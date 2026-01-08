@@ -10,7 +10,7 @@
     "cf:build": "npx opennextjs-cloudflare build",
     "cf:preview": "npx opennextjs-cloudflare build && npx wrangler pages dev .open-next",
     "cf:deploy": "npx opennextjs-cloudflare build && npx wrangler pages deploy .open-next --project-name=arqlopes-site",
-    "pages:build": "npx opennextjs-cloudflare build",
+    "pages:build": "npx opennextjs-cloudflare build && cp .open-next/worker.js .open-next/_worker.js",
     "r2:seed": "node scripts/seed-r2.mjs"
   },
   "dependencies": {
