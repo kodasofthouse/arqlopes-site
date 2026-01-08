@@ -1,0 +1,43 @@
+{
+  "title": "Mais do que",
+  "subtitle": "Construir",
+  "description": "Conheça alguns dos projetos que a Arqlopes Construções teve o prazer de transformar em realidade. Nossa galeria destaca a excelência.",
+  "projects": [
+    {
+      "id": "residencia-ck",
+      "title": "Residência C|K",
+      "tag": "Residencial",
+      "image": "https://pub-9def9de695584c4c8300c62ce8af1bbd.r2.dev/images/gallery/galery-01.jpg"
+    },
+    {
+      "id": "comercial-xyz",
+      "title": "Comercial XYZ",
+      "tag": "Comercial",
+      "image": "https://pub-9def9de695584c4c8300c62ce8af1bbd.r2.dev/images/gallery/galery-02.jpg"
+    },
+    {
+      "id": "reforma-abc",
+      "title": "Reforma ABC",
+      "tag": "Reforma",
+      "image": "https://pub-9def9de695584c4c8300c62ce8af1bbd.r2.dev/images/gallery/galery-03.jpg"
+    },
+    {
+      "id": "residencia-ck2",
+      "title": "Residência C|K2",
+      "tag": "Residencial",
+      "image": "https://pub-9def9de695584c4c8300c62ce8af1bbd.r2.dev/images/gallery/galery-01.jpg"
+    },
+    {
+      "id": "comercial-xyz2",
+      "title": "Comercial XYZ2",
+      "tag": "Comercial",
+      "image": "https://pub-9def9de695584c4c8300c62ce8af1bbd.r2.dev/images/gallery/galery-02.jpg"
+    },
+    {
+      "id": "reforma-abc2",
+      "title": "Reforma ABC2",
+      "tag": "Reforma",
+      "image": "https://pub-9def9de695584c4c8300c62ce8af1bbd.r2.dev/images/gallery/galery-03.jpg"
+    }
+  ]
+}

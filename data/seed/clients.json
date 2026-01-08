@@ -1,0 +1,40 @@
+{
+  "title": "Clientes que confiam na ArqLopes",
+  "clients": [
+    {
+      "id": "client-1",
+      "name": "Cliente 1",
+      "logo": "https://pub-9def9de695584c4c8300c62ce8af1bbd.r2.dev/images/clients/client-1.png"
+    },
+    {
+      "id": "client-2",
+      "name": "Cliente 2",
+      "logo": "https://pub-9def9de695584c4c8300c62ce8af1bbd.r2.dev/images/clients/client-2.png"
+    },
+    {
+      "id": "client-3",
+      "name": "Cliente 3",
+      "logo": "https://pub-9def9de695584c4c8300c62ce8af1bbd.r2.dev/images/clients/cliente-3.png"
+    },
+    {
+      "id": "client-4",
+      "name": "Cliente 4",
+      "logo": "https://pub-9def9de695584c4c8300c62ce8af1bbd.r2.dev/images/clients/client-4.png"
+    },
+    {
+      "id": "client-5",
+      "name": "Cliente 5",
+      "logo": "https://pub-9def9de695584c4c8300c62ce8af1bbd.r2.dev/images/clients/client-5.png"
+    },
+    {
+      "id": "client-6",
+      "name": "Cliente 6",
+      "logo": "https://pub-9def9de695584c4c8300c62ce8af1bbd.r2.dev/images/clients/client-6.png"
+    },
+    {
+      "id": "client-7",
+      "name": "Cliente 7",
+      "logo": "https://pub-9def9de695584c4c8300c62ce8af1bbd.r2.dev/images/clients/client-7.png"
+    }
+  ]
+}

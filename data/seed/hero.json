@@ -1,0 +1,40 @@
+{
+  "title": {
+    "line1": "Obras que",
+    "line2": "impressionam no",
+    "line3": "resultado e",
+    "line4": "surpreendem."
+  },
+  "subtitle": "Alta performance, rigor técnico e acabamento impecável são nossas marcas registradas.",
+  "ctaButton": "Faça um orçamento",
+  "backgroundImages": [
+    "https://pub-9def9de695584c4c8300c62ce8af1bbd.r2.dev/images/hero/background-1.jpg",
+    "https://pub-9def9de695584c4c8300c62ce8af1bbd.r2.dev/images/hero/background-2.jpg",
+    "https://pub-9def9de695584c4c8300c62ce8af1bbd.r2.dev/images/hero/background-3.jpg",
+    "https://pub-9def9de695584c4c8300c62ce8af1bbd.r2.dev/images/hero/background-4.jpg"
+  ],
+  "services": [
+    {
+      "id": "obras-comerciais",
+      "title": "Obras Comerciais",
+      "description": "Execução completa para franquias, lojas e restaurantes. Já realizamos obras para marcas como Burger King e Data Energia.",
+      "icon": "https://pub-9def9de695584c4c8300c62ce8af1bbd.r2.dev/images/general/comercial-construction-icon.svg",
+      "ctaText": "Faça um orçamento",
+      "color": "#045D66"
+    },
+    {
+      "id": "construcoes-residenciais",
+      "title": "Construções Residenciais",
+      "description": "Casas, edifícios e condomínios de alto padrão, com foco em durabilidade, beleza e conforto.",
+      "icon": "https://pub-9def9de695584c4c8300c62ce8af1bbd.r2.dev/images/general/residential-construction-icon.svg",
+      "color": "#E73823"
+    },
+    {
+      "id": "reformas-tecnicas",
+      "title": "Reformas Técnicas",
+      "description": "Requalificações estruturais e remodelações com mínimo impacto e máximo cuidado com o espaço já existente.",
+      "icon": "https://pub-9def9de695584c4c8300c62ce8af1bbd.r2.dev/images/general/tecnical-reform-icon.svg",
+      "color": "#FCB404"
+    }
+  ]
+}

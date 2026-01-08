@@ -1,0 +1,9 @@
+name = "arqlopes-site"
+compatibility_date = "2024-01-01"
+compatibility_flags = ["nodejs_compat"]
+pages_build_output_dir = ".vercel/output/static"
+
+[[r2_buckets]]
+binding = "R2_ASSETS"
+bucket_name = "arqlopes-assets"
+preview_bucket_name = "arqlopes-assets"
