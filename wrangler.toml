@@ -4,8 +4,8 @@ name = "arqlopes-site"
 compatibility_date = "2025-01-01"
 compatibility_flags = ["nodejs_compat"]
 
-# Pages build output directory
-pages_build_output_dir = ".open-next/assets"
+# Pages build output directory (OpenNext uses .open-next as root)
+pages_build_output_dir = ".open-next"
 
 # R2 bucket for content and images
 [[r2_buckets]]
