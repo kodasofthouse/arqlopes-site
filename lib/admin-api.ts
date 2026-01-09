@@ -29,7 +29,24 @@ export class AdminApiError extends Error {
 }
 
 async function handleResponse<T>(response: Response): Promise<T> {
-  const data = await response.json() as ApiResponse<T>;
+  const text = await response.text();
+  
+  if (!text) {
+    throw new AdminApiError(
+      `Server returned empty response (${response.status})`,
+      response.status
+    );
+  }
+  
+  let data: ApiResponse<T>;
+  try {
+    data = JSON.parse(text) as ApiResponse<T>;
+  } catch {
+    throw new AdminApiError(
+      `Invalid JSON response: ${text.substring(0, 200)}`,
+      response.status
+    );
+  }
   
   if (!response.ok || !data.success) {
     throw new AdminApiError(

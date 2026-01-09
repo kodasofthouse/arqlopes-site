@@ -74,7 +74,6 @@ export default function AboutEditor() {
                       placeholder="Descrição da empresa..."
                       multiline
                       rows={6}
-                      description="Use quebras de linha (\\n) para separar parágrafos"
                     />
                   </div>
                 </section>
