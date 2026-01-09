@@ -31,7 +31,7 @@ export default function GalleryEditor() {
       if (err instanceof AdminApiError) {
         setError(err.message);
       } else {
-        setError("Failed to load content");
+        setError("Falha ao carregar conteúdo");
       }
     } finally {
       setIsLoading(false);
@@ -49,7 +49,7 @@ export default function GalleryEditor() {
 
   if (isLoading) return <LoadingPage />;
   if (error) return <ErrorState message={error} onRetry={loadContent} showHomeLink />;
-  if (!content) return <ErrorState message="Content not found" showHomeLink />;
+  if (!content) return <ErrorState message="Conteúdo não encontrado" showHomeLink />;
 
   return (
     <>
@@ -61,23 +61,23 @@ export default function GalleryEditor() {
               <div className="space-y-8">
                 <section>
                   <h2 className="text-lg font-semibold text-gray-900 mb-4">
-                    Section Header
+                    Cabeçalho da Seção
                   </h2>
                   <div className="space-y-4">
                     <TextField
-                      label="Title"
+                      label="Título"
                       value={data.title}
                       onChange={(v) => updateField("title", v)}
                       placeholder="Mais do que"
                     />
                     <TextField
-                      label="Subtitle"
+                      label="Subtítulo"
                       value={data.subtitle}
                       onChange={(v) => updateField("subtitle", v)}
                       placeholder="Construir"
                     />
                     <TextField
-                      label="Description"
+                      label="Descrição"
                       value={data.description}
                       onChange={(v) => updateField("description", v)}
                       placeholder="Conheça alguns dos projetos..."
@@ -89,15 +89,15 @@ export default function GalleryEditor() {
 
                 <section>
                   <h2 className="text-lg font-semibold text-gray-900 mb-4">
-                    Projects ({data.projects.length}/{MAX_GALLERY_PROJECTS})
+                    Projetos ({data.projects.length}/{MAX_GALLERY_PROJECTS})
                   </h2>
                   <ArrayEditor<GalleryProject>
                     items={data.projects}
                     onChange={(projects) => updateField("projects", projects)}
-                    getItemTitle={(item) => item.title || "Untitled Project"}
+                    getItemTitle={(item) => item.title || "Projeto sem título"}
                     maxItems={MAX_GALLERY_PROJECTS}
-                    addButtonText="Add Project"
-                    emptyMessage="No projects added yet"
+                    addButtonText="Adicionar Projeto"
+                    emptyMessage="Nenhum projeto adicionado ainda"
                     createNewItem={() => ({
                       id: generateId(),
                       title: "",
@@ -108,7 +108,7 @@ export default function GalleryEditor() {
                       <div className="space-y-4">
                         <div className="grid grid-cols-2 gap-4">
                           <ItemField
-                            label="Title"
+                            label="Título"
                             value={project.title}
                             onChange={(v) =>
                               updateItem({ ...project, title: v })
@@ -123,7 +123,7 @@ export default function GalleryEditor() {
                           />
                         </div>
                         <ItemField
-                          label="Link (optional)"
+                          label="Link (opcional)"
                           value={project.link ?? ""}
                           onChange={(v) =>
                             updateItem({
@@ -136,7 +136,7 @@ export default function GalleryEditor() {
                         />
                         <div className="space-y-2">
                           <Label className="text-xs font-medium text-gray-600">
-                            Project Image
+                            Imagem do Projeto
                           </Label>
                           <ImageUploader
                             folder="images/gallery"

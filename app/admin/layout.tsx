@@ -2,7 +2,7 @@ import { AdminSidebar } from "@/components/admin/admin-sidebar";
 
 export const metadata = {
   title: "Admin | ArqLopes CMS",
-  description: "Content Management System for ArqLopes",
+  description: "Sistema de Gerenciamento de Conteúdo ArqLopes",
 };
 
 export default function AdminLayout({

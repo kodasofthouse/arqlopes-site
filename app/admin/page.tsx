@@ -16,43 +16,43 @@ import {
 
 const sections = [
   {
-    title: "Hero Section",
-    description: "Edit main banner, title, subtitle, and services",
+    title: "Seção Hero",
+    description: "Editar banner principal, título, subtítulo e serviços",
     href: "/admin/hero",
     icon: Home,
     color: "bg-blue-500",
   },
   {
-    title: "About Section",
-    description: "Update company info, description, and statistics",
+    title: "Seção Sobre",
+    description: "Atualizar informações da empresa, descrição e estatísticas",
     href: "/admin/about",
     icon: Info,
     color: "bg-green-500",
   },
   {
-    title: "Gallery",
-    description: "Manage portfolio projects and images",
+    title: "Galeria",
+    description: "Gerenciar projetos do portfólio e imagens",
     href: "/admin/gallery",
     icon: Image,
     color: "bg-purple-500",
   },
   {
-    title: "Clients",
-    description: "Add or remove client logos",
+    title: "Clientes",
+    description: "Adicionar ou remover logos de clientes",
     href: "/admin/clients",
     icon: Users,
     color: "bg-orange-500",
   },
   {
-    title: "Footer",
-    description: "Edit contact info and social links",
+    title: "Rodapé",
+    description: "Editar informações de contato e redes sociais",
     href: "/admin/footer",
     icon: Mail,
     color: "bg-red-500",
   },
   {
-    title: "Metadata",
-    description: "SEO settings and site information",
+    title: "Metadados",
+    description: "Configurações de SEO e informações do site",
     href: "/admin/metadata",
     icon: Settings,
     color: "bg-gray-600",
@@ -61,14 +61,14 @@ const sections = [
 
 const tools = [
   {
-    title: "Media Library",
-    description: "Browse and manage all uploaded images",
+    title: "Biblioteca de Mídia",
+    description: "Navegar e gerenciar todas as imagens enviadas",
     href: "/admin/media",
     icon: FileImage,
   },
   {
-    title: "Version History",
-    description: "View and restore previous content versions",
+    title: "Histórico de Versões",
+    description: "Visualizar e restaurar versões anteriores do conteúdo",
     href: "/admin/versions",
     icon: History,
   },
@@ -81,7 +81,7 @@ export default function AdminDashboard() {
       <div className="p-6 space-y-8">
         <section>
           <h2 className="text-lg font-semibold text-gray-900 mb-4">
-            Content Sections
+            Seções de Conteúdo
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             {sections.map((section) => {
@@ -115,7 +115,7 @@ export default function AdminDashboard() {
         </section>
 
         <section>
-          <h2 className="text-lg font-semibold text-gray-900 mb-4">Tools</h2>
+          <h2 className="text-lg font-semibold text-gray-900 mb-4">Ferramentas</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {tools.map((tool) => {
               const Icon = tool.icon;
@@ -142,20 +142,20 @@ export default function AdminDashboard() {
         </section>
 
         <section className="bg-[#045B64] rounded-lg p-6 text-white">
-          <h2 className="text-lg font-semibold mb-2">Quick Tips</h2>
+          <h2 className="text-lg font-semibold mb-2">Dicas Rápidas</h2>
           <ul className="text-sm space-y-2 text-white/90">
             <li>
-              • All changes are automatically versioned. Use Version History to
-              restore previous content.
+              • Todas as alterações são versionadas automaticamente. Use o Histórico de Versões para
+              restaurar conteúdo anterior.
             </li>
             <li>
-              • Uploaded images are cached globally for fast delivery.
+              • As imagens enviadas são armazenadas em cache globalmente para entrega rápida.
             </li>
             <li>
-              • Content changes appear on the live site within 60 seconds.
+              • As alterações de conteúdo aparecem no site ao vivo em até 60 segundos.
             </li>
             <li>
-              • Maximum image size is 10MB. Supported formats: JPEG, PNG, WebP.
+              • Tamanho máximo de imagem: 10MB. Formatos suportados: JPEG, PNG, WebP.
             </li>
           </ul>
         </section>

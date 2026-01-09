@@ -17,16 +17,16 @@ import {
 } from "lucide-react";
 
 const navigation = [
-  { name: "Dashboard", href: "/admin", icon: LayoutDashboard },
+  { name: "Painel", href: "/admin", icon: LayoutDashboard },
   { name: "Hero", href: "/admin/hero", icon: Home },
-  { name: "About", href: "/admin/about", icon: Info },
-  { name: "Gallery", href: "/admin/gallery", icon: Image },
-  { name: "Clients", href: "/admin/clients", icon: Users },
-  { name: "Footer", href: "/admin/footer", icon: Mail },
-  { name: "Metadata", href: "/admin/metadata", icon: Settings },
+  { name: "Sobre", href: "/admin/about", icon: Info },
+  { name: "Galeria", href: "/admin/gallery", icon: Image },
+  { name: "Clientes", href: "/admin/clients", icon: Users },
+  { name: "Rodapé", href: "/admin/footer", icon: Mail },
+  { name: "Metadados", href: "/admin/metadata", icon: Settings },
   { type: "divider" as const },
-  { name: "Media Library", href: "/admin/media", icon: FileImage },
-  { name: "Version History", href: "/admin/versions", icon: History },
+  { name: "Biblioteca de Mídia", href: "/admin/media", icon: FileImage },
+  { name: "Histórico de Versões", href: "/admin/versions", icon: History },
 ] as const;
 
 export function AdminSidebar() {
@@ -89,7 +89,7 @@ export function AdminSidebar() {
           className="flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium text-white/70 hover:bg-white/10 hover:text-white transition-colors"
         >
           <LogOut className="w-5 h-5" />
-          Exit to Site
+          Sair para o Site
         </Link>
       </div>
     </aside>

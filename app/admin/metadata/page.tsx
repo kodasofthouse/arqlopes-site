@@ -25,7 +25,7 @@ export default function MetadataEditor() {
       if (err instanceof AdminApiError) {
         setError(err.message);
       } else {
-        setError("Failed to load content");
+        setError("Falha ao carregar conteúdo");
       }
     } finally {
       setIsLoading(false);
@@ -43,7 +43,7 @@ export default function MetadataEditor() {
 
   if (isLoading) return <LoadingPage />;
   if (error) return <ErrorState message={error} onRetry={loadContent} showHomeLink />;
-  if (!content) return <ErrorState message="Content not found" showHomeLink />;
+  if (!content) return <ErrorState message="Conteúdo não encontrado" showHomeLink />;
 
   return (
     <>
@@ -55,10 +55,10 @@ export default function MetadataEditor() {
               <div className="space-y-8">
                 <section>
                   <h2 className="text-lg font-semibold text-gray-900 mb-4">
-                    Site Information
+                    Informações do Site
                   </h2>
                   <TextField
-                    label="Site Name"
+                    label="Nome do Site"
                     value={data.siteName}
                     onChange={(v) => updateField("siteName", v)}
                     placeholder="ArqLopes"
@@ -67,37 +67,37 @@ export default function MetadataEditor() {
 
                 <section>
                   <h2 className="text-lg font-semibold text-gray-900 mb-4">
-                    SEO Settings
+                    Configurações de SEO
                   </h2>
                   <div className="space-y-4">
                     <TextField
-                      label="SEO Title"
+                      label="Título SEO"
                       value={data.seoTitle}
                       onChange={(v) => updateField("seoTitle", v)}
                       placeholder="ArqLopes - Obras que impressionam"
-                      description="This appears in browser tabs and search results"
+                      description="Aparece nas abas do navegador e nos resultados de busca"
                     />
                     <TextField
-                      label="SEO Description"
+                      label="Descrição SEO"
                       value={data.seoDescription}
                       onChange={(v) => updateField("seoDescription", v)}
                       placeholder="Alta performance, rigor técnico..."
                       multiline
                       rows={3}
-                      description="Recommended: 150-160 characters for best display in search results"
+                      description="Recomendado: 150-160 caracteres para melhor exibição nos resultados de busca"
                     />
                   </div>
                 </section>
 
                 <section>
                   <h2 className="text-lg font-semibold text-gray-900 mb-4">
-                    Social Sharing Image
+                    Imagem de Compartilhamento Social
                   </h2>
                   <div className="space-y-2">
-                    <Label className="text-sm text-gray-700">OG Image</Label>
+                    <Label className="text-sm text-gray-700">Imagem OG</Label>
                     <p className="text-xs text-gray-500 mb-3">
-                      This image appears when the site is shared on social media.
-                      Recommended size: 1200x630 pixels.
+                      Esta imagem aparece quando o site é compartilhado nas redes sociais.
+                      Tamanho recomendado: 1200x630 pixels.
                     </p>
                     <ImageUploader
                       folder="images/general"

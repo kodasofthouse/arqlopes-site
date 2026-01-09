@@ -41,7 +41,7 @@ const GaleryCard = ({
     tag: string;
 }) => {
     return (
-        <div className="flex w-full relative group transition-transform duration-300 hover:scale-[1.01] z-10 hover:z-20">
+        <div className="flex w-full h-full relative group transition-transform duration-300 hover:scale-[1.01] z-10 hover:z-20">
             <div
                 className="absolute inset-0 flex items-end left-0 pl-[36px] pb-[46px] 
                     opacity-100 md:opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20"
@@ -94,9 +94,9 @@ const GaleryCard = ({
             <Image
                 src={imageSrc}
                 alt="Project Image"
-                className="w-full h-full object-cover"
-                width={600}
-                height={800}
+                className="object-cover"
+                fill
+                sizes="(max-width: 768px) 100vw, 33vw"
             />
 
             
@@ -123,12 +123,11 @@ export default function Galery() {
                         >
                             Mais do que
                         </h1>
-                        <Image
+                        {/* eslint-disable-next-line @next/next/no-img-element */}
+                        <img
                             src="/common/handwrite-construir.svg"
                             alt="Texto manuscrito: Construir"
                             className="mx-auto lg:-mt-[86px] w-[350px] lg:w-[650px] -mt-[66px] lg:-mb-[26px] -mb-[10px]"
-                            width={350}
-                            height={100}
                         />
 
                         <p className="text-md lg:text-[21.37px] text-[#181D23] text-center leading-relaxed lg:text-nowrap pb-[58px]">

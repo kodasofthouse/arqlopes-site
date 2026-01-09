@@ -32,7 +32,7 @@ export default function HeroEditor() {
       if (err instanceof AdminApiError) {
         setError(err.message);
       } else {
-        setError("Failed to load content");
+        setError("Falha ao carregar conteúdo");
       }
     } finally {
       setIsLoading(false);
@@ -50,7 +50,7 @@ export default function HeroEditor() {
 
   if (isLoading) return <LoadingPage />;
   if (error) return <ErrorState message={error} onRetry={loadContent} showHomeLink />;
-  if (!content) return <ErrorState message="Content not found" showHomeLink />;
+  if (!content) return <ErrorState message="Conteúdo não encontrado" showHomeLink />;
 
   return (
     <>
@@ -62,29 +62,29 @@ export default function HeroEditor() {
               <div className="space-y-8">
                 <section>
                   <h2 className="text-lg font-semibold text-gray-900 mb-4">
-                    Title
+                    Título
                   </h2>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <TextField
-                      label="Line 1"
+                      label="Linha 1"
                       value={data.title.line1}
                       onChange={(v) => updateNestedField("title", "line1", v)}
                       placeholder="Obras que"
                     />
                     <TextField
-                      label="Line 2"
+                      label="Linha 2"
                       value={data.title.line2}
                       onChange={(v) => updateNestedField("title", "line2", v)}
                       placeholder="impressionam no"
                     />
                     <TextField
-                      label="Line 3"
+                      label="Linha 3"
                       value={data.title.line3}
                       onChange={(v) => updateNestedField("title", "line3", v)}
                       placeholder="resultado e"
                     />
                     <TextField
-                      label="Line 4"
+                      label="Linha 4"
                       value={data.title.line4}
                       onChange={(v) => updateNestedField("title", "line4", v)}
                       placeholder="surpreendem."
@@ -94,11 +94,11 @@ export default function HeroEditor() {
 
                 <section>
                   <h2 className="text-lg font-semibold text-gray-900 mb-4">
-                    Content
+                    Conteúdo
                   </h2>
                   <div className="space-y-4">
                     <TextField
-                      label="Subtitle"
+                      label="Subtítulo"
                       value={data.subtitle}
                       onChange={(v) => updateField("subtitle", v)}
                       placeholder="Alta performance, rigor técnico..."
@@ -106,7 +106,7 @@ export default function HeroEditor() {
                       rows={2}
                     />
                     <TextField
-                      label="CTA Button Text"
+                      label="Texto do Botão CTA"
                       value={data.ctaButton}
                       onChange={(v) => updateField("ctaButton", v)}
                       placeholder="Faça um orçamento"
@@ -116,12 +116,12 @@ export default function HeroEditor() {
 
                 <section>
                   <h2 className="text-lg font-semibold text-gray-900 mb-4">
-                    Background Images ({data.backgroundImages.length}/{MAX_HERO_BACKGROUND_IMAGES})
+                    Imagens de Fundo ({data.backgroundImages.length}/{MAX_HERO_BACKGROUND_IMAGES})
                   </h2>
                   <div className="grid grid-cols-2 gap-4">
                     {data.backgroundImages.map((url, index) => (
                       <div key={index} className="space-y-2">
-                        <Label className="text-sm">Image {index + 1}</Label>
+                        <Label className="text-sm">Imagem {index + 1}</Label>
                         <ImageUploader
                           folder="images/hero"
                           currentImage={url}
@@ -145,7 +145,7 @@ export default function HeroEditor() {
                     ))}
                     {data.backgroundImages.length < MAX_HERO_BACKGROUND_IMAGES && (
                       <div className="space-y-2">
-                        <Label className="text-sm">Add Image</Label>
+                        <Label className="text-sm">Adicionar Imagem</Label>
                         <ImageUploader
                           folder="images/hero"
                           onUploadComplete={(newUrl) => {
@@ -162,14 +162,14 @@ export default function HeroEditor() {
 
                 <section>
                   <h2 className="text-lg font-semibold text-gray-900 mb-4">
-                    Services
+                    Serviços
                   </h2>
                   <ArrayEditor<HeroService>
                     items={data.services}
                     onChange={(services) => updateField("services", services)}
-                    getItemTitle={(item) => item.title || "Untitled Service"}
-                    addButtonText="Add Service"
-                    emptyMessage="No services added yet"
+                    getItemTitle={(item) => item.title || "Serviço sem título"}
+                    addButtonText="Adicionar Serviço"
+                    emptyMessage="Nenhum serviço adicionado ainda"
                     createNewItem={() => ({
                       id: generateId(),
                       title: "",
@@ -181,16 +181,16 @@ export default function HeroEditor() {
                       <div className="space-y-4">
                         <div className="grid grid-cols-2 gap-4">
                           <ItemField
-                            label="Title"
+                            label="Título"
                             value={service.title}
                             onChange={(v) =>
                               updateItem({ ...service, title: v })
                             }
-                            placeholder="Service name"
+                            placeholder="Nome do serviço"
                           />
                           <div className="space-y-1.5">
                             <Label className="text-xs font-medium text-gray-600">
-                              Color
+                              Cor
                             </Label>
                             <div className="flex gap-2">
                               <input
@@ -213,16 +213,16 @@ export default function HeroEditor() {
                           </div>
                         </div>
                         <ItemField
-                          label="Description"
+                          label="Descrição"
                           value={service.description}
                           onChange={(v) =>
                             updateItem({ ...service, description: v })
                           }
-                          placeholder="Service description"
+                          placeholder="Descrição do serviço"
                         />
                         <div className="space-y-2">
                           <Label className="text-xs font-medium text-gray-600">
-                            Icon
+                            Ícone
                           </Label>
                           <ImageUploader
                             folder="images/general"
@@ -234,7 +234,7 @@ export default function HeroEditor() {
                           />
                         </div>
                         <ItemField
-                          label="CTA Text (optional)"
+                          label="Texto do CTA (opcional)"
                           value={service.ctaText ?? ""}
                           onChange={(v) =>
                             updateItem({

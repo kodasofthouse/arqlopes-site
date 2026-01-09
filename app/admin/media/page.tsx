@@ -42,7 +42,7 @@ export default function MediaLibrary() {
       if (err instanceof AdminApiError) {
         setError(err.message);
       } else {
-        setError("Failed to load images");
+        setError("Falha ao carregar imagens");
       }
     } finally {
       setIsLoading(false);
@@ -60,7 +60,7 @@ export default function MediaLibrary() {
   };
 
   const handleDelete = async (key: string) => {
-    if (!confirm("Are you sure you want to delete this image?")) return;
+    if (!confirm("Tem certeza que deseja excluir esta imagem?")) return;
 
     setIsDeleting(true);
     try {
@@ -68,7 +68,7 @@ export default function MediaLibrary() {
       setImages((prev) => prev.filter((img) => img.key !== key));
       setSelectedImage(null);
     } catch (err) {
-      alert(err instanceof Error ? err.message : "Failed to delete image");
+      alert(err instanceof Error ? err.message : "Falha ao excluir imagem");
     } finally {
       setIsDeleting(false);
     }
@@ -99,12 +99,12 @@ export default function MediaLibrary() {
             {showUploader ? (
               <>
                 <X className="h-4 w-4 mr-2" />
-                Cancel
+                Cancelar
               </>
             ) : (
               <>
                 <Upload className="h-4 w-4 mr-2" />
-                Upload Image
+                Enviar Imagem
               </>
             )}
           </Button>
@@ -113,7 +113,7 @@ export default function MediaLibrary() {
       <div className="p-6">
         {showUploader && (
           <div className="mb-6 bg-white rounded-lg shadow-sm border p-6">
-            <h3 className="text-lg font-semibold mb-4">Upload New Image</h3>
+            <h3 className="text-lg font-semibold mb-4">Enviar Nova Imagem</h3>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               {IMAGE_FOLDERS.map((folder) => (
                 <div key={folder} className="space-y-2">
@@ -131,7 +131,7 @@ export default function MediaLibrary() {
         <div className="flex gap-6">
           <div className="w-48 shrink-0">
             <div className="bg-white rounded-lg shadow-sm border p-4">
-              <h3 className="font-medium text-gray-900 mb-3">Folders</h3>
+              <h3 className="font-medium text-gray-900 mb-3">Pastas</h3>
               <nav className="space-y-1">
                 <button
                   onClick={() => setSelectedFolder(null)}
@@ -143,7 +143,7 @@ export default function MediaLibrary() {
                   )}
                 >
                   <FolderOpen className="h-4 w-4" />
-                  All Images
+                  Todas as Imagens
                 </button>
                 {folders.map((folder) => (
                   <button
@@ -172,10 +172,10 @@ export default function MediaLibrary() {
             ) : images.length === 0 ? (
               <EmptyState
                 icon={<ImageIcon className="h-8 w-8" />}
-                title="No images yet"
-                description="Upload your first image to get started"
+                title="Nenhuma imagem ainda"
+                description="Envie sua primeira imagem para começar"
                 action={{
-                  label: "Upload Image",
+                  label: "Enviar Imagem",
                   onClick: () => setShowUploader(true),
                 }}
               />
@@ -200,7 +200,7 @@ export default function MediaLibrary() {
           {selectedImageData && (
             <div className="w-72 shrink-0">
               <div className="bg-white rounded-lg shadow-sm border p-4 sticky top-20">
-                <h3 className="font-medium text-gray-900 mb-4">Image Details</h3>
+                <h3 className="font-medium text-gray-900 mb-4">Detalhes da Imagem</h3>
                 <div className="aspect-square relative rounded-lg overflow-hidden bg-gray-100 mb-4">
                   <img
                     src={selectedImageData.url}
@@ -210,23 +210,23 @@ export default function MediaLibrary() {
                 </div>
                 <dl className="space-y-2 text-sm">
                   <div>
-                    <dt className="text-gray-500">File</dt>
+                    <dt className="text-gray-500">Arquivo</dt>
                     <dd className="text-gray-900 truncate" title={selectedImageData.key}>
                       {selectedImageData.key.split("/").pop()}
                     </dd>
                   </div>
                   <div>
-                    <dt className="text-gray-500">Size</dt>
+                    <dt className="text-gray-500">Tamanho</dt>
                     <dd className="text-gray-900">
                       {formatBytes(selectedImageData.size)}
                     </dd>
                   </div>
                   <div>
-                    <dt className="text-gray-500">Type</dt>
+                    <dt className="text-gray-500">Tipo</dt>
                     <dd className="text-gray-900">{selectedImageData.contentType}</dd>
                   </div>
                   <div>
-                    <dt className="text-gray-500">Uploaded</dt>
+                    <dt className="text-gray-500">Enviado em</dt>
                     <dd className="text-gray-900">
                       {new Date(selectedImageData.lastModified).toLocaleDateString()}
                     </dd>
@@ -242,12 +242,12 @@ export default function MediaLibrary() {
                     {copiedUrl === selectedImageData.url ? (
                       <>
                         <Check className="h-4 w-4 mr-2" />
-                        Copied!
+                        Copiado!
                       </>
                     ) : (
                       <>
                         <Copy className="h-4 w-4 mr-2" />
-                        Copy URL
+                        Copiar URL
                       </>
                     )}
                   </Button>
@@ -259,7 +259,7 @@ export default function MediaLibrary() {
                     disabled={isDeleting}
                   >
                     <Trash2 className="h-4 w-4 mr-2" />
-                    {isDeleting ? "Deleting..." : "Delete"}
+                    {isDeleting ? "Excluindo..." : "Excluir"}
                   </Button>
                 </div>
               </div>

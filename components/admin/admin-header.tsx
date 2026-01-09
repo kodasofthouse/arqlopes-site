@@ -6,15 +6,15 @@ import { ChevronLeft, RefreshCw } from "lucide-react";
 import Link from "next/link";
 
 const pageTitles: Record<string, string> = {
-  "/admin": "Dashboard",
-  "/admin/hero": "Edit Hero Section",
-  "/admin/about": "Edit About Section",
-  "/admin/gallery": "Manage Gallery",
-  "/admin/clients": "Manage Clients",
-  "/admin/footer": "Edit Footer",
-  "/admin/metadata": "Site Metadata",
-  "/admin/media": "Media Library",
-  "/admin/versions": "Version History",
+  "/admin": "Painel",
+  "/admin/hero": "Editar Seção Hero",
+  "/admin/about": "Editar Seção Sobre",
+  "/admin/gallery": "Gerenciar Galeria",
+  "/admin/clients": "Gerenciar Clientes",
+  "/admin/footer": "Editar Rodapé",
+  "/admin/metadata": "Metadados do Site",
+  "/admin/media": "Biblioteca de Mídia",
+  "/admin/versions": "Histórico de Versões",
 };
 
 interface AdminHeaderProps {
@@ -35,7 +35,7 @@ export function AdminHeader({ onRefresh, isLoading, actions }: AdminHeaderProps)
           <Button variant="ghost" size="icon" asChild>
             <Link href="/admin">
               <ChevronLeft className="h-5 w-5" />
-              <span className="sr-only">Back to Dashboard</span>
+              <span className="sr-only">Voltar ao Painel</span>
             </Link>
           </Button>
         )}
@@ -51,7 +51,7 @@ export function AdminHeader({ onRefresh, isLoading, actions }: AdminHeaderProps)
             disabled={isLoading}
           >
             <RefreshCw className={`h-4 w-4 mr-2 ${isLoading ? "animate-spin" : ""}`} />
-            Refresh
+            Atualizar
           </Button>
         )}
         {actions}

@@ -12,7 +12,7 @@ interface ErrorStateProps {
 }
 
 export function ErrorState({
-  title = "Something went wrong",
+  title = "Algo deu errado",
   message,
   onRetry,
   showHomeLink = false,
@@ -28,14 +28,14 @@ export function ErrorState({
         {onRetry && (
           <Button onClick={onRetry} variant="outline">
             <RefreshCw className="h-4 w-4 mr-2" />
-            Try Again
+            Tentar Novamente
           </Button>
         )}
         {showHomeLink && (
           <Button asChild>
             <Link href="/admin">
               <Home className="h-4 w-4 mr-2" />
-              Back to Dashboard
+              Voltar ao Painel
             </Link>
           </Button>
         )}

@@ -19,13 +19,13 @@ export default function About() {
                             spinDuration={60}
                             className={`${spaceGrotesk.className} !text-[#045B64] font-bold !tracking-wider text-2xl h-[200px] w-[200px] lg:h-[285px] lg:w-[285px]`}
                         /> */}
-                        <div className="flex items-center justify-center h-[140px] lg:h-[285.1px] lg:w-[273.95px]">
+                        <div className="relative h-[140px] w-[140px] lg:h-[285.1px] lg:w-[273.95px]">
                             <Image
                                 src="/logos/logo-with-slogan.svg"
                                 alt="ArqLopes Logo"
-                                className="h-[140px] lg:h-[285.1px] lg:w-[273.95px] object-contain self-center"
-                                width={274}
-                                height={286}
+                                className="object-contain"
+                                fill
+                                sizes="(max-width: 1024px) 140px, 274px"
                             />
                         </div>
                     </div>

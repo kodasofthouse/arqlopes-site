@@ -48,11 +48,11 @@ export function ImageUploader({
     async (file: File) => {
       setError(null);
       setIsUploading(true);
-      setUploadProgress("Uploading...");
+      setUploadProgress("Enviando...");
 
       try {
         const result = await uploadImage(file, folder);
-        setUploadProgress("Upload complete!");
+        setUploadProgress("Upload concluído!");
         onUploadComplete(result.url);
 
         setTimeout(() => {
@@ -62,7 +62,7 @@ export function ImageUploader({
         if (err instanceof AdminApiError) {
           setError(err.details?.join(", ") ?? err.message);
         } else {
-          setError("Upload failed. Please try again.");
+          setError("Falha no upload. Por favor, tente novamente.");
         }
       } finally {
         setIsUploading(false);
@@ -80,7 +80,7 @@ export function ImageUploader({
       if (file && file.type.startsWith("image/")) {
         handleFileSelect(file);
       } else {
-        setError("Please drop a valid image file (JPEG, PNG, or WebP)");
+        setError("Por favor, solte um arquivo de imagem válido (JPEG, PNG ou WebP)");
       }
     },
     [handleFileSelect]
@@ -147,7 +147,7 @@ export function ImageUploader({
                 onClick={openFilePicker}
                 disabled={isUploading}
               >
-                Replace
+                Substituir
               </Button>
               {onRemove && (
                 <Button
@@ -179,9 +179,9 @@ export function ImageUploader({
                 uploadProgress
               ) : (
                 <>
-                  <span className="font-medium">Click to upload</span>
+                  <span className="font-medium">Clique para enviar</span>
                   <br />
-                  or drag and drop
+                  ou arraste e solte
                 </>
               )}
             </div>
@@ -203,7 +203,7 @@ export function ImageUploader({
         </div>
       )}
 
-      {uploadProgress === "Upload complete!" && (
+      {uploadProgress === "Upload concluído!" && (
         <div className="flex items-center gap-2 text-sm text-green-600">
           <CheckCircle2 className="h-4 w-4" />
           {uploadProgress}
@@ -211,7 +211,7 @@ export function ImageUploader({
       )}
 
       <p className="text-xs text-gray-500">
-        Supported formats: JPEG, PNG, WebP. Max size: 10MB
+        Formatos suportados: JPEG, PNG, WebP. Tamanho máximo: 10MB
       </p>
     </div>
   );

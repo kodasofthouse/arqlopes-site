@@ -16,7 +16,7 @@ export function LoadingPage() {
     <div className="flex items-center justify-center min-h-[60vh]">
       <div className="text-center">
         <Loader2 className="h-10 w-10 animate-spin text-[#045B64] mx-auto mb-4" />
-        <p className="text-gray-500">Loading content...</p>
+        <p className="text-gray-500">Carregando conteúdo...</p>
       </div>
     </div>
   );

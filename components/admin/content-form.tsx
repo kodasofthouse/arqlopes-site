@@ -62,10 +62,10 @@ export function ContentForm<T extends object>({
 
     try {
       await onSave(data);
-      setStatus({ type: "success", message: "Content saved successfully!" });
+      setStatus({ type: "success", message: "Conteúdo salvo com sucesso!" });
     } catch (error) {
       const message =
-        error instanceof Error ? error.message : "Failed to save content";
+        error instanceof Error ? error.message : "Falha ao salvar conteúdo";
       setStatus({ type: "error", message });
     } finally {
       setIsSaving(false);
@@ -98,12 +98,12 @@ export function ContentForm<T extends object>({
           {isSaving ? (
             <>
               <Loader2 className="h-4 w-4 mr-2 animate-spin" />
-              Saving...
+              Salvando...
             </>
           ) : (
             <>
               <Save className="h-4 w-4 mr-2" />
-              Save Changes
+              Salvar Alterações
             </>
           )}
         </Button>

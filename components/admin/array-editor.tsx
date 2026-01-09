@@ -35,8 +35,8 @@ export function ArrayEditor<T>({
   createNewItem,
   getItemTitle,
   maxItems,
-  addButtonText = "Add Item",
-  emptyMessage = "No items yet",
+  addButtonText = "Adicionar Item",
+  emptyMessage = "Nenhum item ainda",
 }: ArrayEditorProps<T>) {
   const [expandedIndex, setExpandedIndex] = useState<number | null>(
     items.length > 0 ? 0 : null
@@ -92,7 +92,7 @@ export function ArrayEditor<T>({
         <div className="space-y-2">
           {items.map((item, index) => {
             const isExpanded = expandedIndex === index;
-            const title = getItemTitle?.(item) ?? `Item ${index + 1}`;
+            const title = getItemTitle?.(item) ?? `Item ${index + 1}`; // Mantém formato numérico
 
             return (
               <div
@@ -179,7 +179,7 @@ export function ArrayEditor<T>({
 
       {maxItems && (
         <p className="text-xs text-gray-500 text-right">
-          {items.length} / {maxItems} items
+          {items.length} / {maxItems} itens
         </p>
       )}
     </div>

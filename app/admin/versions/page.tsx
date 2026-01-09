@@ -33,7 +33,7 @@ export default function VersionHistory() {
       if (err instanceof AdminApiError) {
         setError(err.message);
       } else {
-        setError("Failed to load versions");
+        setError("Falha ao carregar versões");
       }
     } finally {
       setIsLoading(false);
@@ -47,7 +47,7 @@ export default function VersionHistory() {
   const handleRollback = async (versionId: string) => {
     if (
       !confirm(
-        `Are you sure you want to rollback to version ${versionId}?\n\nThis will replace the current content with this version. The current content will be saved as a new version.`
+        `Tem certeza que deseja restaurar para a versão ${versionId}?\n\nIsso irá substituir o conteúdo atual por esta versão. O conteúdo atual será salvo como uma nova versão.`
       )
     ) {
       return;
@@ -62,7 +62,7 @@ export default function VersionHistory() {
       loadVersions();
       setTimeout(() => setRollbackSuccess(null), 3000);
     } catch (err) {
-      alert(err instanceof Error ? err.message : "Rollback failed");
+      alert(err instanceof Error ? err.message : "Falha na restauração");
     } finally {
       setIsRollingBack(null);
     }
@@ -90,7 +90,7 @@ export default function VersionHistory() {
       <div className="p-6">
         <div className="mb-6">
           <label className="block text-sm font-medium text-gray-700 mb-2">
-            Select Section
+            Selecionar Seção
           </label>
           <div className="flex flex-wrap gap-2">
             {CONTENT_SECTIONS.map((section) => (
@@ -113,11 +113,11 @@ export default function VersionHistory() {
         <div className="bg-white rounded-lg shadow-sm border overflow-hidden">
           <div className="px-6 py-4 border-b bg-gray-50">
             <h2 className="text-lg font-semibold text-gray-900 capitalize">
-              {selectedSection} Version History
+              Histórico de Versões - {selectedSection}
             </h2>
             <p className="text-sm text-gray-500 mt-1">
-              Click &quot;Restore&quot; to rollback to a previous version. The current
-              content will be saved automatically.
+              Clique em &quot;Restaurar&quot; para voltar a uma versão anterior. O conteúdo
+              atual será salvo automaticamente.
             </p>
           </div>
 
@@ -134,8 +134,8 @@ export default function VersionHistory() {
               <div className="p-6">
                 <EmptyState
                   icon={<History className="h-8 w-8" />}
-                  title="No versions yet"
-                  description="Version history will appear here after you make changes to this section."
+                  title="Nenhuma versão ainda"
+                  description="O histórico de versões aparecerá aqui após você fazer alterações nesta seção."
                 />
               </div>
             ) : (

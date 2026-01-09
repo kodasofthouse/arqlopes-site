@@ -199,12 +199,10 @@ export default function Hero() {
                         </div>
 
                         <div className="hidden lg:flex justify-end lg:justify-end self-start">
-                            <Image
+                            {/* eslint-disable-next-line @next/next/no-img-element */}
+                            <img
                                 src="/gifs/hero-decorative.gif"
                                 alt="Elemento decorativo"
-                                width={400}
-                                height={400}
-                                unoptimized
                             />
                         </div>
                     </div>

@@ -4,7 +4,6 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
-import Image from "next/image";
 import clsx from "clsx";
 
 export default function Navbar() {
@@ -50,11 +49,11 @@ export default function Navbar() {
                 <nav className="flex items-center justify-between max-w-[1428.1px] mx-auto relative">
                     <div className="flex items-center mr-8">
                         <Link href="/">
-                            <Image
+                            {/* eslint-disable-next-line @next/next/no-img-element */}
+                            <img
                                 src="/logos/arqlopes-logo.svg"
                                 alt="Arq Lopes Logo"
-                                width={247}
-                                height={52}
+                                className="h-[52px] w-auto"
                             />
                         </Link>
                     </div>

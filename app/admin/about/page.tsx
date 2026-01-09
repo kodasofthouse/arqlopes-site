@@ -28,7 +28,7 @@ export default function AboutEditor() {
       if (err instanceof AdminApiError) {
         setError(err.message);
       } else {
-        setError("Failed to load content");
+        setError("Falha ao carregar conteúdo");
       }
     } finally {
       setIsLoading(false);
@@ -46,7 +46,7 @@ export default function AboutEditor() {
 
   if (isLoading) return <LoadingPage />;
   if (error) return <ErrorState message={error} onRetry={loadContent} showHomeLink />;
-  if (!content) return <ErrorState message="Content not found" showHomeLink />;
+  if (!content) return <ErrorState message="Conteúdo não encontrado" showHomeLink />;
 
   return (
     <>
@@ -58,30 +58,30 @@ export default function AboutEditor() {
               <div className="space-y-8">
                 <section>
                   <h2 className="text-lg font-semibold text-gray-900 mb-4">
-                    Content
+                    Conteúdo
                   </h2>
                   <div className="space-y-4">
                     <TextField
-                      label="Title"
+                      label="Título"
                       value={data.title}
                       onChange={(v) => updateField("title", v)}
                       placeholder="Somos a ArqLopes"
                     />
                     <TextField
-                      label="Description"
+                      label="Descrição"
                       value={data.description}
                       onChange={(v) => updateField("description", v)}
-                      placeholder="Company description..."
+                      placeholder="Descrição da empresa..."
                       multiline
                       rows={6}
-                      description="Use line breaks (\\n) to separate paragraphs"
+                      description="Use quebras de linha (\\n) para separar parágrafos"
                     />
                   </div>
                 </section>
 
                 <section>
                   <h2 className="text-lg font-semibold text-gray-900 mb-4">
-                    Statistics
+                    Estatísticas
                   </h2>
                   <ArrayEditor<AboutStat>
                     items={data.stats}
@@ -89,10 +89,10 @@ export default function AboutEditor() {
                     getItemTitle={(item) =>
                       item.label
                         ? `${item.value}${item.suffix} ${item.label}`
-                        : "New Statistic"
+                        : "Nova Estatística"
                     }
-                    addButtonText="Add Statistic"
-                    emptyMessage="No statistics added yet"
+                    addButtonText="Adicionar Estatística"
+                    emptyMessage="Nenhuma estatística adicionada ainda"
                     createNewItem={() => ({
                       id: generateId(),
                       value: 0,
@@ -102,19 +102,19 @@ export default function AboutEditor() {
                     renderItem={(stat, _index, updateItem) => (
                       <div className="grid grid-cols-3 gap-4">
                         <ItemNumberField
-                          label="Value"
+                          label="Valor"
                           value={stat.value}
                           onChange={(v) => updateItem({ ...stat, value: v })}
                           min={0}
                         />
                         <ItemField
-                          label="Suffix"
+                          label="Sufixo"
                           value={stat.suffix}
                           onChange={(v) => updateItem({ ...stat, suffix: v })}
                           placeholder="+"
                         />
                         <ItemField
-                          label="Label"
+                          label="Rótulo"
                           value={stat.label}
                           onChange={(v) => updateItem({ ...stat, label: v })}
                           placeholder="Projetos entregues"

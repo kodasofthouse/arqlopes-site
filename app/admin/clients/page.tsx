@@ -31,7 +31,7 @@ export default function ClientsEditor() {
       if (err instanceof AdminApiError) {
         setError(err.message);
       } else {
-        setError("Failed to load content");
+        setError("Falha ao carregar conteúdo");
       }
     } finally {
       setIsLoading(false);
@@ -49,7 +49,7 @@ export default function ClientsEditor() {
 
   if (isLoading) return <LoadingPage />;
   if (error) return <ErrorState message={error} onRetry={loadContent} showHomeLink />;
-  if (!content) return <ErrorState message="Content not found" showHomeLink />;
+  if (!content) return <ErrorState message="Conteúdo não encontrado" showHomeLink />;
 
   return (
     <>
@@ -61,10 +61,10 @@ export default function ClientsEditor() {
               <div className="space-y-8">
                 <section>
                   <h2 className="text-lg font-semibold text-gray-900 mb-4">
-                    Section Header
+                    Cabeçalho da Seção
                   </h2>
                   <TextField
-                    label="Title"
+                    label="Título"
                     value={data.title}
                     onChange={(v) => updateField("title", v)}
                     placeholder="Clientes que confiam na ArqLopes"
@@ -73,15 +73,15 @@ export default function ClientsEditor() {
 
                 <section>
                   <h2 className="text-lg font-semibold text-gray-900 mb-4">
-                    Client Logos ({data.clients.length}/{MAX_CLIENT_LOGOS})
+                    Logos de Clientes ({data.clients.length}/{MAX_CLIENT_LOGOS})
                   </h2>
                   <ArrayEditor<Client>
                     items={data.clients}
                     onChange={(clients) => updateField("clients", clients)}
-                    getItemTitle={(item) => item.name || "Unnamed Client"}
+                    getItemTitle={(item) => item.name || "Cliente sem nome"}
                     maxItems={MAX_CLIENT_LOGOS}
-                    addButtonText="Add Client"
-                    emptyMessage="No clients added yet"
+                    addButtonText="Adicionar Cliente"
+                    emptyMessage="Nenhum cliente adicionado ainda"
                     createNewItem={() => ({
                       id: generateId(),
                       name: "",
@@ -90,7 +90,7 @@ export default function ClientsEditor() {
                     renderItem={(client, _index, updateItem) => (
                       <div className="space-y-4">
                         <ItemField
-                          label="Client Name"
+                          label="Nome do Cliente"
                           value={client.name}
                           onChange={(v) => updateItem({ ...client, name: v })}
                           placeholder="Burger King"

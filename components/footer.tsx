@@ -214,12 +214,11 @@ export default function Footer() {
 
                 <div className="flex flex-col lg:flex-row justify-between gap-16 items-center lg:items-start">
                     <div className="space-y-[42px] text-center lg:text-left w-full">
-                        <Image
+                        {/* eslint-disable-next-line @next/next/no-img-element */}
+                        <img
                             src="/images/selo-footer.png"
                             alt="Selo de qualidade"
-                            width={180}
-                            height={180}
-                            className="mx-auto lg:mx-0"
+                            className="mx-auto lg:mx-0 h-[180px] w-auto"
                         />
 
                         <p

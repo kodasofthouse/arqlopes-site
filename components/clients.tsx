@@ -5,7 +5,6 @@ import {
     MarqueeFade,
     MarqueeItem,
 } from "./ui/shadcn-io/marquee";
-import Image from "next/image";
 
 const spaceGrotesk = Space_Grotesk({ subsets: ["latin"] });
 
@@ -45,12 +44,11 @@ export default function Clients() {
                         <MarqueeContent>
                             {clientLogos.map((logo, index) => (
                                 <MarqueeItem key={index}>
-                                    <Image
+                                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                                    <img
                                         alt={`Client Logo ${index + 1}`}
-                                        className="overflow-hidden w-[150px] lg:w-[180px] object-cover mx-0"
+                                        className="overflow-hidden w-[150px] lg:w-[180px] h-auto object-contain mx-0"
                                         src={logo}
-                                        width={180}
-                                        height={100}
                                     />
                                 </MarqueeItem>
                             ))}
