@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { Space_Grotesk } from "next/font/google";
 import CircularText from "./CircularText/CircularText";
 import CountUp from "./CountUp/CountUp";
@@ -19,13 +18,12 @@ export default function About() {
                             spinDuration={60}
                             className={`${spaceGrotesk.className} !text-[#045B64] font-bold !tracking-wider text-2xl h-[200px] w-[200px] lg:h-[285px] lg:w-[285px]`}
                         /> */}
-                        <div className="relative h-[140px] w-[140px] lg:h-[285.1px] lg:w-[273.95px]">
-                            <Image
+                        <div className="flex items-center justify-center h-[140px] lg:h-[285.1px] lg:w-[273.95px]">
+                            {/* eslint-disable-next-line @next/next/no-img-element */}
+                            <img
                                 src="/logos/logo-with-slogan.svg"
                                 alt="ArqLopes Logo"
-                                className="object-contain"
-                                fill
-                                sizes="(max-width: 1024px) 140px, 274px"
+                                className="h-[140px] lg:h-[285.1px] lg:w-[273.95px] object-contain self-center"
                             />
                         </div>
                     </div>

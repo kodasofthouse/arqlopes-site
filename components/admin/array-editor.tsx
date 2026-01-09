@@ -26,6 +26,7 @@ interface ArrayEditorProps<T> {
   maxItems?: number;
   addButtonText?: string;
   emptyMessage?: string;
+  startCollapsed?: boolean;
 }
 
 export function ArrayEditor<T>({
@@ -37,9 +38,10 @@ export function ArrayEditor<T>({
   maxItems,
   addButtonText = "Adicionar Item",
   emptyMessage = "Nenhum item ainda",
+  startCollapsed = false,
 }: ArrayEditorProps<T>) {
   const [expandedIndex, setExpandedIndex] = useState<number | null>(
-    items.length > 0 ? 0 : null
+    startCollapsed ? null : (items.length > 0 ? 0 : null)
   );
 
   const handleAdd = () => {

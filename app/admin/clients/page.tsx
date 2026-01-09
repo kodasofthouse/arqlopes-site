@@ -82,6 +82,7 @@ export default function ClientsEditor() {
                     maxItems={MAX_CLIENT_LOGOS}
                     addButtonText="Adicionar Cliente"
                     emptyMessage="Nenhum cliente adicionado ainda"
+                    startCollapsed
                     createNewItem={() => ({
                       id: generateId(),
                       name: "",

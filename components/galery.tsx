@@ -41,7 +41,7 @@ const GaleryCard = ({
     tag: string;
 }) => {
     return (
-        <div className="flex w-full h-full relative group transition-transform duration-300 hover:scale-[1.01] z-10 hover:z-20">
+        <div className="flex w-full relative group transition-transform duration-300 hover:scale-[1.01] z-10 hover:z-20">
             <div
                 className="absolute inset-0 flex items-end left-0 pl-[36px] pb-[46px] 
                     opacity-100 md:opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20"
@@ -91,12 +91,11 @@ const GaleryCard = ({
                 }}
             />
 
-            <Image
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
                 src={imageSrc}
                 alt="Project Image"
-                className="object-cover"
-                fill
-                sizes="(max-width: 768px) 100vw, 33vw"
+                className="w-full h-full object-cover"
             />
 
             

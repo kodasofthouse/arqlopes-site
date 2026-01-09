@@ -1,13 +1,14 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
 import {
   LayoutDashboard,
   Home,
   Info,
-  Image,
+  Image as ImageIcon,
   Users,
   Mail,
   FileImage,
@@ -20,7 +21,7 @@ const navigation = [
   { name: "Painel", href: "/admin", icon: LayoutDashboard },
   { name: "Hero", href: "/admin/hero", icon: Home },
   { name: "Sobre", href: "/admin/about", icon: Info },
-  { name: "Galeria", href: "/admin/gallery", icon: Image },
+  { name: "Galeria", href: "/admin/gallery", icon: ImageIcon },
   { name: "Clientes", href: "/admin/clients", icon: Users },
   { name: "Rodapé", href: "/admin/footer", icon: Mail },
   { name: "Metadados", href: "/admin/metadata", icon: Settings },
@@ -34,12 +35,15 @@ export function AdminSidebar() {
 
   return (
     <aside className="fixed inset-y-0 left-0 z-50 w-64 bg-[#1a1a2e] text-white flex flex-col">
-      <div className="flex h-16 items-center justify-center border-b border-white/10">
-        <Link href="/admin" className="flex items-center gap-2">
-          <div className="w-8 h-8 bg-[#045B64] rounded-lg flex items-center justify-center font-bold text-sm">
-            AL
-          </div>
-          <span className="font-semibold text-lg">ArqLopes CMS</span>
+      <div className="flex h-16 items-center justify-center border-b border-white/10 px-4">
+        <Link href="/admin">
+          <Image
+            src="/logos/arqlopes-logo.svg"
+            alt="ArqLopes"
+            width={160}
+            height={34}
+            className="h-8 w-auto"
+          />
         </Link>
       </div>
 

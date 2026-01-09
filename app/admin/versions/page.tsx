@@ -167,7 +167,7 @@ export default function VersionHistory() {
                         </span>
                         {index === 0 && (
                           <span className="px-2 py-0.5 bg-green-100 text-green-700 text-xs font-medium rounded">
-                            Latest Backup
+                            Backup Mais Recente
                           </span>
                         )}
                       </div>
@@ -193,17 +193,17 @@ export default function VersionHistory() {
                     {isRollingBack === version.id ? (
                       <>
                         <LoadingSpinner className="h-4 w-4 mr-2" />
-                        Restoring...
+                        Restaurando...
                       </>
                     ) : rollbackSuccess === version.id ? (
                       <>
                         <Check className="h-4 w-4 mr-2" />
-                        Restored!
+                        Restaurado!
                       </>
                     ) : (
                       <>
                         <RotateCcw className="h-4 w-4 mr-2" />
-                        Restore
+                        Restaurar
                       </>
                     )}
                   </Button>
@@ -216,11 +216,11 @@ export default function VersionHistory() {
         <div className="mt-6 bg-amber-50 border border-amber-200 rounded-lg p-4 flex items-start gap-3">
           <AlertTriangle className="h-5 w-5 text-amber-600 shrink-0 mt-0.5" />
           <div>
-            <h3 className="font-medium text-amber-800">About Versioning</h3>
+            <h3 className="font-medium text-amber-800">Sobre o Versionamento</h3>
             <ul className="text-sm text-amber-700 mt-1 space-y-1">
-              <li>• Up to 10 versions are kept per section</li>
-              <li>• Older versions are automatically deleted when the limit is reached</li>
-              <li>• Restoring a version creates a backup of the current content first</li>
+              <li>• Até 10 versões são mantidas por seção</li>
+              <li>• Versões mais antigas são excluídas automaticamente quando o limite é atingido</li>
+              <li>• Restaurar uma versão cria um backup do conteúdo atual primeiro</li>
             </ul>
           </div>
         </div>

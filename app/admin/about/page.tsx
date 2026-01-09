@@ -93,6 +93,7 @@ export default function AboutEditor() {
                     }
                     addButtonText="Adicionar Estatística"
                     emptyMessage="Nenhuma estatística adicionada ainda"
+                    startCollapsed
                     createNewItem={() => ({
                       id: generateId(),
                       value: 0,

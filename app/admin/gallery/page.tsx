@@ -98,6 +98,7 @@ export default function GalleryEditor() {
                     maxItems={MAX_GALLERY_PROJECTS}
                     addButtonText="Adicionar Projeto"
                     emptyMessage="Nenhum projeto adicionado ainda"
+                    startCollapsed
                     createNewItem={() => ({
                       id: generateId(),
                       title: "",
