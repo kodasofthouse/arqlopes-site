@@ -38,7 +38,7 @@ export async function DELETE(
     return createErrorResponse('Invalid image key - must be in images folder', 400);
   }
   
-  const { env } = await getCloudflareContext<CloudflareEnv>();
+  const { env } = getCloudflareContext() as { env: CloudflareEnv };
   
   if (!env.R2_ASSETS) {
     return createErrorResponse('R2 bucket not configured', 500);

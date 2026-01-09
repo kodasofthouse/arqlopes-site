@@ -20,7 +20,7 @@ export async function GET(request: Request): Promise<Response> {
   const url = new URL(request.url);
   const prefix = url.searchParams.get('folder') ?? undefined;
   
-  const { env } = await getCloudflareContext<CloudflareEnv>();
+  const { env } = getCloudflareContext() as { env: CloudflareEnv };
   
   if (!env.R2_ASSETS) {
     return createErrorResponse('R2 bucket not configured', 500);

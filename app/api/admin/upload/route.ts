@@ -63,7 +63,7 @@ export async function POST(request: Request): Promise<Response> {
     );
   }
   
-  const { env } = await getCloudflareContext<CloudflareEnv>();
+  const { env } = getCloudflareContext() as { env: CloudflareEnv };
   
   if (!env.R2_ASSETS) {
     return createErrorResponse('R2 bucket not configured', 500);

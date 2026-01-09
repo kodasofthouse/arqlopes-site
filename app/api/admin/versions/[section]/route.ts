@@ -34,7 +34,7 @@ export async function GET(
     return createErrorResponse(VALIDATION_MESSAGES.INVALID_SECTION, 400);
   }
   
-  const { env } = await getCloudflareContext<CloudflareEnv>();
+  const { env } = getCloudflareContext() as { env: CloudflareEnv };
   
   if (!env.R2_ASSETS) {
     return createErrorResponse('R2 bucket not configured', 500);
