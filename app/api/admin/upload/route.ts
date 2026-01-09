@@ -4,9 +4,10 @@
  */
 
 import { NextResponse } from 'next/server';
+import { getCloudflareContext } from '@opennextjs/cloudflare';
 import { requireAuth, createErrorResponse, createSuccessResponse } from '@/lib/auth';
 import { validateImage } from '@/lib/validation';
-import { generateImageKey, VALIDATION_MESSAGES } from '@/lib/api-config';
+import { generateImageKey, VALIDATION_MESSAGES, R2_PUBLIC_URL } from '@/lib/api-config';
 import { uploadImageToR2 } from '@/lib/r2';
 import type { CloudflareEnv } from '@/lib/r2';
 import type { AllowedImageMimeType } from '@/lib/api-config';
@@ -62,7 +63,7 @@ export async function POST(request: Request): Promise<Response> {
     );
   }
   
-  const env = (process as unknown as { env: CloudflareEnv }).env;
+  const { env } = await getCloudflareContext<CloudflareEnv>();
   
   if (!env.R2_ASSETS) {
     return createErrorResponse('R2 bucket not configured', 500);
@@ -79,7 +80,7 @@ export async function POST(request: Request): Promise<Response> {
       file.type as AllowedImageMimeType
     );
     
-    const r2Url = process.env.NEXT_PUBLIC_R2_URL ?? '';
+    const r2Url = R2_PUBLIC_URL;
     
     const response: UploadResponse = {
       url: `${r2Url}/${key}`,

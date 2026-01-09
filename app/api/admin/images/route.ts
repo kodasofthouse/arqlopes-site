@@ -3,7 +3,7 @@
  * Protected endpoint to list all images in R2
  */
 
-import { NextResponse } from 'next/server';
+import { getCloudflareContext } from '@opennextjs/cloudflare';
 import { requireAuth, createErrorResponse, createNoCacheResponse } from '@/lib/auth';
 import { listImagesFromR2, listImageFoldersFromR2 } from '@/lib/r2';
 import type { CloudflareEnv } from '@/lib/r2';
@@ -20,7 +20,7 @@ export async function GET(request: Request): Promise<Response> {
   const url = new URL(request.url);
   const prefix = url.searchParams.get('folder') ?? undefined;
   
-  const env = (process as unknown as { env: CloudflareEnv }).env;
+  const { env } = await getCloudflareContext<CloudflareEnv>();
   
   if (!env.R2_ASSETS) {
     return createErrorResponse('R2 bucket not configured', 500);

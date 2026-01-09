@@ -3,6 +3,7 @@
  * Protected endpoint to list all versions for a section
  */
 
+import { getCloudflareContext } from '@opennextjs/cloudflare';
 import { requireAuth, createErrorResponse, createNoCacheResponse } from '@/lib/auth';
 import { isValidSection } from '@/lib/validation';
 import { VALIDATION_MESSAGES } from '@/lib/api-config';
@@ -33,7 +34,7 @@ export async function GET(
     return createErrorResponse(VALIDATION_MESSAGES.INVALID_SECTION, 400);
   }
   
-  const env = (process as unknown as { env: CloudflareEnv }).env;
+  const { env } = await getCloudflareContext<CloudflareEnv>();
   
   if (!env.R2_ASSETS) {
     return createErrorResponse('R2 bucket not configured', 500);

@@ -4,6 +4,7 @@
  */
 
 import { NextResponse } from 'next/server';
+import { getCloudflareContext } from '@opennextjs/cloudflare';
 import { requireAuth, createErrorResponse, createSuccessResponse } from '@/lib/auth';
 import { isValidSection } from '@/lib/validation';
 import { VALIDATION_MESSAGES } from '@/lib/api-config';
@@ -52,7 +53,7 @@ export async function POST(
     );
   }
   
-  const env = (process as unknown as { env: CloudflareEnv }).env;
+  const { env } = await getCloudflareContext<CloudflareEnv>();
   
   if (!env.R2_ASSETS) {
     return createErrorResponse('R2 bucket not configured', 500);

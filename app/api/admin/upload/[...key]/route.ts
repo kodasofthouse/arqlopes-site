@@ -3,6 +3,7 @@
  * Protected endpoint to delete images from R2 (soft delete to _trash)
  */
 
+import { getCloudflareContext } from '@opennextjs/cloudflare';
 import { requireAuth, createErrorResponse, createSuccessResponse } from '@/lib/auth';
 import { VALIDATION_MESSAGES, R2_PATHS } from '@/lib/api-config';
 import { softDeleteFromR2 } from '@/lib/r2';
@@ -37,7 +38,7 @@ export async function DELETE(
     return createErrorResponse('Invalid image key - must be in images folder', 400);
   }
   
-  const env = (process as unknown as { env: CloudflareEnv }).env;
+  const { env } = await getCloudflareContext<CloudflareEnv>();
   
   if (!env.R2_ASSETS) {
     return createErrorResponse('R2 bucket not configured', 500);
