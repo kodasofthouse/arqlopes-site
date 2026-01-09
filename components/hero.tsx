@@ -1,10 +1,6 @@
 "use client";
 
-import ComercialConstructionIcon from "@/public/icons/comercial-construction-icon.svg";
-import ResidentialConstructionIcon from "@/public/icons/residential-construction-icon.svg";
-import RenovationIcon from "@/public/icons/tecnical-reform-icon.svg";
 import Image from "next/image";
-import DecorativeGif from "@/public/gifs/hero-decorative.gif";
 import { Button } from "@/components/ui/button";
 import { Space_Grotesk } from "next/font/google";
 import Link from "next/link";
@@ -204,8 +200,11 @@ export default function Hero() {
 
                         <div className="hidden lg:flex justify-end lg:justify-end self-start">
                             <Image
-                                src={DecorativeGif}
+                                src="/gifs/hero-decorative.gif"
                                 alt="Elemento decorativo"
+                                width={400}
+                                height={400}
+                                unoptimized
                             />
                         </div>
                     </div>
@@ -220,9 +219,11 @@ export default function Hero() {
                     <div className="bg-[#045D66] px-8 pt-10 pb-8 text-white flex-1">
                         <div className="mb-6">
                             <Image
-                                src={ComercialConstructionIcon}
+                                src="/icons/comercial-construction-icon.svg"
                                 alt="Obras Comerciais Icon"
                                 className="w-11"
+                                width={44}
+                                height={44}
                             />
                         </div>
                         <h3
@@ -252,9 +253,11 @@ export default function Hero() {
                     <div className="bg-vermelho2 px-8 pt-10 pb-8 text-white flex-1">
                         <div className="mb-6">
                             <Image
-                                src={ResidentialConstructionIcon}
+                                src="/icons/residential-construction-icon.svg"
                                 alt="Construções Residenciais Icon"
                                 className="w-11"
+                                width={44}
+                                height={44}
                             />
                         </div>
                         <h3
@@ -274,9 +277,11 @@ export default function Hero() {
                     <div className="bg-amarelo px-8 pt-10 pb-8 text-white flex-1">
                         <div className="mb-6">
                             <Image
-                                src={RenovationIcon}
+                                src="/icons/tecnical-reform-icon.svg"
                                 alt="Reformas Técnicas e Ampliações Icon"
                                 className="w-11"
+                                width={44}
+                                height={44}
                             />
                         </div>
                         <h3

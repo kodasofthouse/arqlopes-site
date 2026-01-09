@@ -5,7 +5,6 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 import Image from "next/image";
-import ArqLopesLogo from "@/public/logos/arqlopes-logo.svg";
 import clsx from "clsx";
 
 export default function Navbar() {
@@ -52,8 +51,9 @@ export default function Navbar() {
                     <div className="flex items-center mr-8">
                         <Link href="/">
                             <Image
-                                src={ArqLopesLogo}
+                                src="/logos/arqlopes-logo.svg"
                                 alt="Arq Lopes Logo"
+                                width={247}
                                 height={52}
                             />
                         </Link>

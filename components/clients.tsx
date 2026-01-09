@@ -1,11 +1,4 @@
 import { Space_Grotesk } from "next/font/google";
-import ClientOneLogo from "@/public/logos/clients/client-1.png";
-import ClientTwoLogo from "@/public/logos/clients/client-2.png";
-import ClientThreeLogo from "@/public/logos/clients/cliente-3.png";
-import ClientFourLogo from "@/public/logos/clients/client-4.png";
-import ClientFiveLogo from "@/public/logos/clients/client-5.png";
-import ClientSixLogo from "@/public/logos/clients/client-6.png";
-import ClientSevenLogo from "@/public/logos/clients/client-7.png";
 import {
     Marquee,
     MarqueeContent,
@@ -16,17 +9,17 @@ import Image from "next/image";
 
 const spaceGrotesk = Space_Grotesk({ subsets: ["latin"] });
 
-export default function Clients() {
+const clientLogos = [
+    "/logos/clients/client-1.png",
+    "/logos/clients/client-2.png",
+    "/logos/clients/cliente-3.png",
+    "/logos/clients/client-4.png",
+    "/logos/clients/client-5.png",
+    "/logos/clients/client-6.png",
+    "/logos/clients/client-7.png",
+];
 
-    const clientLogos = [
-        ClientOneLogo,
-        ClientTwoLogo,
-        ClientThreeLogo,
-        ClientFourLogo,
-        ClientFiveLogo,
-        ClientSixLogo,
-        ClientSevenLogo,
-    ];
+export default function Clients() {
 
     return (
         <section
@@ -56,6 +49,8 @@ export default function Clients() {
                                         alt={`Client Logo ${index + 1}`}
                                         className="overflow-hidden w-[150px] lg:w-[180px] object-cover mx-0"
                                         src={logo}
+                                        width={180}
+                                        height={100}
                                     />
                                 </MarqueeItem>
                             ))}

@@ -1,9 +1,7 @@
-import LogoWithColor from "@/public/logos/logo-color.svg";
 import Image from "next/image";
 import { Space_Grotesk } from "next/font/google";
 import CircularText from "./CircularText/CircularText";
 import CountUp from "./CountUp/CountUp";
-import LogoWithSlogan from "@/public/logos/logo-with-slogan.svg";
 
 const spaceGrotesk = Space_Grotesk({ subsets: ["latin"] });
 
@@ -23,9 +21,11 @@ export default function About() {
                         /> */}
                         <div className="flex items-center justify-center h-[140px] lg:h-[285.1px] lg:w-[273.95px]">
                             <Image
-                                src={LogoWithSlogan}
+                                src="/logos/logo-with-slogan.svg"
                                 alt="ArqLopes Logo"
                                 className="h-[140px] lg:h-[285.1px] lg:w-[273.95px] object-contain self-center"
+                                width={274}
+                                height={286}
                             />
                         </div>
                     </div>

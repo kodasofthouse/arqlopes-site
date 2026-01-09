@@ -3,14 +3,10 @@
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Facebook, Instagram, Linkedin } from "lucide-react";
-import MailIcon from "@/public/icons/mail-icon.svg";
-import PhoneIcon from "@/public/icons/phone-icon.svg";
-import LocationIcon from "@/public/icons/location-icon.svg";
 import { Open_Sans, Space_Grotesk } from "next/font/google";
 import Image from "next/image";
-import SeloFooter from "@/public/images/selo-footer.png";
 import Link from "next/link";
-import { useEffect, useState, useTransition } from "react";
+import { useState, useTransition } from "react";
 import { sendContactEmail } from "@/app/actions/send-email";
 
 const spaceGrotesk = Space_Grotesk({ subsets: ["latin"] });
@@ -86,9 +82,11 @@ export default function Footer() {
                         >
                             <div className="flex items-center gap-6">
                                 <Image
-                                    src={PhoneIcon}
+                                    src="/icons/phone-icon.svg"
                                     alt="Ícone de reforma"
                                     className="w-[38px] h-[38px]"
+                                    width={38}
+                                    height={38}
                                 />
                                 <span className="text-[22px] lg:text-[22px]">
                                     (31) 97203-1160
@@ -97,9 +95,11 @@ export default function Footer() {
 
                             <div className="flex items-center gap-6">
                                 <Image
-                                    src={MailIcon}
+                                    src="/icons/mail-icon.svg"
                                     alt="Ícone de e-mail"
                                     className="w-[38px] h-[38px]"
+                                    width={38}
+                                    height={38}
                                 />
                                 <span className="text-[22px] lg:text-[22px]">
                                     contato@arqlopes.com.br
@@ -108,9 +108,11 @@ export default function Footer() {
 
                             <div className="flex items-start gap-6">
                                 <Image
-                                    src={LocationIcon}
+                                    src="/icons/location-icon.svg"
                                     alt="Ícone de localização"
                                     className="w-[38px] h-[38px]"
+                                    width={38}
+                                    height={38}
                                 />
                                 <div className="text-[22px] lg:text-[22px]">
                                     <div>Rua Hidra, 301, Sala 304</div>
@@ -213,8 +215,9 @@ export default function Footer() {
                 <div className="flex flex-col lg:flex-row justify-between gap-16 items-center lg:items-start">
                     <div className="space-y-[42px] text-center lg:text-left w-full">
                         <Image
-                            src={SeloFooter}
+                            src="/images/selo-footer.png"
                             alt="Selo de qualidade"
+                            width={180}
                             height={180}
                             className="mx-auto lg:mx-0"
                         />

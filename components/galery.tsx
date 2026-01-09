@@ -1,40 +1,34 @@
 "use client";
 
-import HandwriteText from "@/public/common/handwrite-construir.svg";
-import Image, { StaticImageData } from "next/image";
-import GaleryImageOne from "@/public/images/galery/galery-01.jpg";
-import GaleryImageTwo from "@/public/images/galery/galery-02.jpg";
-import GaleryImageThree from "@/public/images/galery/galery-03.jpg";
+import Image from "next/image";
 import { Space_Grotesk } from "next/font/google";
 import Link from "next/link";
 import { useState } from "react";
-import ArrowLeftIcon from "@/public/icons/arrow-left-icon.svg";
-import ArrowRightIcon from "@/public/icons/arrow-right-icon.svg";
 
 const spaceGrotesk = Space_Grotesk({ subsets: ["latin"] });
 const GaleryData = [
     {
-        imageSrc: GaleryImageOne,
+        imageSrc: "/images/galery/galery-01.jpg",
         title: "Residência C|K",
         tag: "Residencial",
     },
     {
-        imageSrc: GaleryImageTwo,
+        imageSrc: "/images/galery/galery-02.jpg",
         title: "Comercial XYZ",
         tag: "Comercial",
     },
     {
-        imageSrc: GaleryImageThree,
+        imageSrc: "/images/galery/galery-03.jpg",
         title: "Reforma ABC",
         tag: "Reforma",
     },
     {
-        imageSrc: GaleryImageOne,
+        imageSrc: "/images/galery/galery-01.jpg",
         title: "Residência C|K2",
         tag: "Residencial",
     },
-    { imageSrc: GaleryImageTwo, title: "Comercial XYZ2", tag: "Comercial" },
-    { imageSrc: GaleryImageThree, title: "Reforma ABC2", tag: "Reforma" },
+    { imageSrc: "/images/galery/galery-02.jpg", title: "Comercial XYZ2", tag: "Comercial" },
+    { imageSrc: "/images/galery/galery-03.jpg", title: "Reforma ABC2", tag: "Reforma" },
 ];
 
 const GaleryCard = ({
@@ -42,7 +36,7 @@ const GaleryCard = ({
     title,
     tag,
 }: {
-    imageSrc: StaticImageData;
+    imageSrc: string;
     title: string;
     tag: string;
 }) => {
@@ -101,6 +95,8 @@ const GaleryCard = ({
                 src={imageSrc}
                 alt="Project Image"
                 className="w-full h-full object-cover"
+                width={600}
+                height={800}
             />
 
             
@@ -128,11 +124,11 @@ export default function Galery() {
                             Mais do que
                         </h1>
                         <Image
-                            src={HandwriteText}
+                            src="/common/handwrite-construir.svg"
                             alt="Texto manuscrito: Construir"
                             className="mx-auto lg:-mt-[86px] w-[350px] lg:w-[650px] -mt-[66px] lg:-mb-[26px] -mb-[10px]"
                             width={350}
-                            sizes="(max-width: 661.08px)"
+                            height={100}
                         />
 
                         <p className="text-md lg:text-[21.37px] text-[#181D23] text-center leading-relaxed lg:text-nowrap pb-[58px]">
@@ -169,7 +165,7 @@ export default function Galery() {
                                 type="button"
                             >
                                 <Image
-                                    src={ArrowLeftIcon}
+                                    src="/icons/arrow-left-icon.svg"
                                     alt="Seta para a esquerda"
                                     width={24}
                                     height={24}
@@ -188,8 +184,10 @@ export default function Galery() {
                                 type="button"
                             >
                                 <Image
-                                    src={ArrowRightIcon}
+                                    src="/icons/arrow-right-icon.svg"
                                     alt="Seta para a direita"
+                                    width={24}
+                                    height={24}
                                 />
                             </button>
                         </div>
@@ -226,7 +224,7 @@ export default function Galery() {
                                 type="button"
                             >
                                 <Image
-                                    src={ArrowLeftIcon}
+                                    src="/icons/arrow-left-icon.svg"
                                     alt="Seta para a esquerda"
                                     width={20}
                                     height={20}
@@ -245,7 +243,7 @@ export default function Galery() {
                                 type="button"
                             >
                                 <Image
-                                    src={ArrowRightIcon}
+                                    src="/icons/arrow-right-icon.svg"
                                     alt="Seta para a direita"
                                     width={20}
                                     height={20}
