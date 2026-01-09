@@ -4,8 +4,13 @@ name = "arqlopes-site"
 compatibility_date = "2025-01-01"
 compatibility_flags = ["nodejs_compat"]
 
-# Pages build output directory
-pages_build_output_dir = ".open-next"
+# For Workers deployment
+main = ".open-next/worker.js"
+
+# Static assets configuration
+[assets]
+directory = ".open-next/assets"
+binding = "ASSETS"
 
 # R2 bucket for content and images
 [[r2_buckets]]

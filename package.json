@@ -7,10 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "cf:build": "npx opennextjs-cloudflare build",
-    "cf:preview": "npx opennextjs-cloudflare build && npx wrangler pages dev .open-next",
-    "cf:deploy": "npx opennextjs-cloudflare build && npx wrangler pages deploy .open-next --project-name=arqlopes-site",
-    "pages:build": "npx opennextjs-cloudflare build && mv .open-next/worker.js .open-next/_worker.js && cp -r .open-next/assets/. .open-next/ && rm -rf .open-next/assets",
+    "preview": "opennextjs-cloudflare build && opennextjs-cloudflare preview",
+    "deploy": "opennextjs-cloudflare build && opennextjs-cloudflare deploy",
     "r2:seed": "node scripts/seed-r2.mjs"
   },
   "dependencies": {
