@@ -11,7 +11,7 @@
  */
 
 import { execSync } from 'child_process';
-import { existsSync, readdirSync } from 'fs';
+import { existsSync, readdirSync, writeFileSync, unlinkSync } from 'fs';
 import { join, basename, extname } from 'path';
 
 const BUCKET_NAME = 'arqlopes-assets';
@@ -30,13 +30,18 @@ function r2Put(key, localPath) {
 }
 
 function r2PutJson(key, jsonContent) {
-  const cmd = `echo '${JSON.stringify(jsonContent)}' | npx wrangler r2 object put ${BUCKET_NAME}/${key} --pipe --content-type="application/json"`;
-  console.log(`  ↑ ${key}`);
+  const tempFile = join(process.cwd(), '.temp-seed.json');
+  
   try {
-    execSync(cmd, { stdio: 'pipe', shell: true });
+    writeFileSync(tempFile, JSON.stringify(jsonContent));
+    const cmd = `npx wrangler r2 object put ${BUCKET_NAME}/${key} --file="${tempFile}" --content-type="application/json"`;
+    console.log(`  ↑ ${key}`);
+    execSync(cmd, { stdio: 'pipe' });
+    unlinkSync(tempFile);
     return true;
   } catch (error) {
     console.error(`    ✗ Failed: ${error.message}`);
+    try { unlinkSync(tempFile); } catch {}
     return false;
   }
 }
