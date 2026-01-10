@@ -126,7 +126,7 @@ console.log('\n🖼️  Uploading gallery images...\n');
 const galleryDir = join(PUBLIC_DIR, 'images', 'galery');
 if (existsSync(galleryDir)) {
   const galleryFiles = readdirSync(galleryDir).filter(f => 
-    ['.jpg', '.jpeg', '.png', '.webp'].includes(extname(f).toLowerCase())
+    ['.jpg', '.jpeg', '.png', '.webp', '.svg'].includes(extname(f).toLowerCase())
   );
   for (const file of galleryFiles) {
     r2Put(`images/gallery/${file}`, join(galleryDir, file));
@@ -138,7 +138,7 @@ console.log('\n🖼️  Uploading client logos...\n');
 const clientsDir = join(PUBLIC_DIR, 'logos', 'clients');
 if (existsSync(clientsDir)) {
   const clientFiles = readdirSync(clientsDir).filter(f => 
-    ['.jpg', '.jpeg', '.png', '.webp'].includes(extname(f).toLowerCase())
+    ['.jpg', '.jpeg', '.png', '.webp', '.svg'].includes(extname(f).toLowerCase())
   );
   for (const file of clientFiles) {
     r2Put(`images/clients/${file}`, join(clientsDir, file));

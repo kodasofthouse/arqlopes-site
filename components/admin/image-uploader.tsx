@@ -84,7 +84,7 @@ export function ImageUploader({
       if (file && file.type.startsWith("image/")) {
         handleFileSelect(file);
       } else {
-        setError("Por favor, solte um arquivo de imagem válido (JPEG, PNG ou WebP)");
+        setError("Por favor, solte um arquivo de imagem válido (JPEG, PNG, WebP ou SVG)");
       }
     },
     [handleFileSelect]
@@ -116,7 +116,7 @@ export function ImageUploader({
       <input
         ref={fileInputRef}
         type="file"
-        accept="image/jpeg,image/png,image/webp"
+        accept="image/jpeg,image/png,image/webp,image/svg+xml"
         onChange={handleInputChange}
         className="hidden"
       />
@@ -218,7 +218,7 @@ export function ImageUploader({
       )}
 
       <p className="text-xs text-gray-500">
-        Formatos suportados: JPEG, PNG, WebP. Tamanho máximo: 10MB
+        Formatos suportados: JPEG, PNG, WebP, SVG. Tamanho máximo: 10MB
       </p>
     </div>
   );
