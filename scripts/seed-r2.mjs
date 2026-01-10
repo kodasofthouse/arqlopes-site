@@ -18,7 +18,7 @@ const BUCKET_NAME = 'arqlopes-assets';
 
 // Helper to run wrangler commands
 function r2Put(key, localPath) {
-  const cmd = `npx wrangler r2 object put ${BUCKET_NAME}/${key} --file="${localPath}"`;
+  const cmd = `npx wrangler r2 object put ${BUCKET_NAME}/${key} --file="${localPath}" --remote`;
   console.log(`  ↑ ${key}`);
   try {
     execSync(cmd, { stdio: 'pipe' });
@@ -34,7 +34,7 @@ function r2PutJson(key, jsonContent) {
   
   try {
     writeFileSync(tempFile, JSON.stringify(jsonContent));
-    const cmd = `npx wrangler r2 object put ${BUCKET_NAME}/${key} --file="${tempFile}" --content-type="application/json"`;
+    const cmd = `npx wrangler r2 object put ${BUCKET_NAME}/${key} --file="${tempFile}" --content-type="application/json" --remote`;
     console.log(`  ↑ ${key}`);
     execSync(cmd, { stdio: 'pipe' });
     unlinkSync(tempFile);

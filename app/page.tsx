@@ -1,27 +1,43 @@
 import About from "@/components/about"
-//import Clients from "@/components/clients"
 import Footer from "@/components/footer"
-//import Galery from "@/components/galery"
 import Hero from "@/components/hero"
 import Navbar from "@/components/navbar"
 import { Suspense, lazy } from "react";
+import { 
+  getHeroContent, 
+  getAboutContent, 
+  getGalleryContent, 
+  getClientsContent, 
+  getFooterContent 
+} from "@/lib/content";
 
 const Galery = lazy(() => import("@/components/galery"));
 const Clients = lazy(() => import("@/components/clients"));
 
-export default function Home() {
+export const revalidate = 60; // Revalidate every 60 seconds
+
+export default async function Home() {
+  // Fetch all content in parallel
+  const [heroData, aboutData, galleryData, clientsData, footerData] = await Promise.all([
+    getHeroContent(),
+    getAboutContent(),
+    getGalleryContent(),
+    getClientsContent(),
+    getFooterContent(),
+  ]);
+
   return (
     <div className="min-h-screen bg-gray-50">
       <Navbar />
-      <Hero />
-      <About />
-      <Suspense fallback={<div>Loading...</div>}>
-        <Galery />
+      <Hero data={heroData} />
+      <About data={aboutData} />
+      <Suspense fallback={<div className="h-[1460px] bg-white flex items-center justify-center">Carregando galeria...</div>}>
+        <Galery data={galleryData} />
       </Suspense>
-      <Suspense fallback={<div>Loading...</div>}>
-        <Clients />
+      <Suspense fallback={<div className="h-[270px] bg-white flex items-center justify-center">Carregando clientes...</div>}>
+        <Clients data={clientsData} />
       </Suspense>
-      <Footer />
+      <Footer data={footerData} />
     </div>
   )
 }

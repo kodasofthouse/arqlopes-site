@@ -4,41 +4,18 @@ import Image from "next/image";
 import { Space_Grotesk } from "next/font/google";
 import Link from "next/link";
 import { useState } from "react";
+import type { GalleryContent, GalleryProject } from "@/types/content";
 
 const spaceGrotesk = Space_Grotesk({ subsets: ["latin"] });
-const GaleryData = [
-    {
-        imageSrc: "/images/galery/galery-01.jpg",
-        title: "Residência C|K",
-        tag: "Residencial",
-    },
-    {
-        imageSrc: "/images/galery/galery-02.jpg",
-        title: "Comercial XYZ",
-        tag: "Comercial",
-    },
-    {
-        imageSrc: "/images/galery/galery-03.jpg",
-        title: "Reforma ABC",
-        tag: "Reforma",
-    },
-    {
-        imageSrc: "/images/galery/galery-01.jpg",
-        title: "Residência C|K2",
-        tag: "Residencial",
-    },
-    { imageSrc: "/images/galery/galery-02.jpg", title: "Comercial XYZ2", tag: "Comercial" },
-    { imageSrc: "/images/galery/galery-03.jpg", title: "Reforma ABC2", tag: "Reforma" },
-];
+
+interface GaleryProps {
+    data: GalleryContent;
+}
 
 const GaleryCard = ({
-    imageSrc,
-    title,
-    tag,
+    project,
 }: {
-    imageSrc: string;
-    title: string;
-    tag: string;
+    project: GalleryProject;
 }) => {
     return (
         <div className="flex w-full relative group transition-transform duration-300 hover:scale-[1.01] z-10 hover:z-20">
@@ -53,33 +30,35 @@ const GaleryCard = ({
                             " text-[#C17F6F] text-[28px] md:text-[34px] font-medium pb-2"
                         }
                     >
-                        {title}
+                        {project.title}
                     </h2>
                     <span className="bg-[#C17F6F] w-[140px] md:w-[160px] text-[#020202] text-xs text-center font-medium py-2 rounded-full mb-6 md:mb-[51px]">
-                        {tag}
+                        {project.tag}
                     </span>
-                    <Link
-                        href="#"
-                        className={
-                            spaceGrotesk.className +
-                            " relative text-white text-[16px] md:text-[18px] font-medium hover:text-[#C17F6F] transition-colors"
-                        }
-                    >
-                        <span className="relative inline-flex items-start gap-2">
-                            <span className="mb-2">Ver todo o projeto</span>
-                            <span
-                                className="absolute left-0 bottom-0"
-                                style={{
-                                    width: "75%",
-                                    height: "2px",
-                                    background: "currentColor",
-                                    borderRadius: "1px",
-                                    display: "block",
-                                }}
-                                aria-hidden="true"
-                            />
-                        </span>
-                    </Link>
+                    {project.link && (
+                        <Link
+                            href={project.link}
+                            className={
+                                spaceGrotesk.className +
+                                " relative text-white text-[16px] md:text-[18px] font-medium hover:text-[#C17F6F] transition-colors"
+                            }
+                        >
+                            <span className="relative inline-flex items-start gap-2">
+                                <span className="mb-2">Ver todo o projeto</span>
+                                <span
+                                    className="absolute left-0 bottom-0"
+                                    style={{
+                                        width: "75%",
+                                        height: "2px",
+                                        background: "currentColor",
+                                        borderRadius: "1px",
+                                        display: "block",
+                                    }}
+                                    aria-hidden="true"
+                                />
+                            </span>
+                        </Link>
+                    )}
                 </div>
             </div>
 
@@ -93,24 +72,24 @@ const GaleryCard = ({
 
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
-                src={imageSrc}
-                alt="Project Image"
+                src={project.image}
+                alt={project.title}
                 className="w-full h-full object-cover"
             />
-
-            
         </div>
     );
 };
 
-export default function Galery() {
+export default function Galery({ data }: GaleryProps) {
     const [currentIndex, setCurrentIndex] = useState<number>(0);
+    const projects = data.projects;
+
     return (
         <section
             id="galery"
             className="flex bg-white border-t border-[#E5E5E5] flex-col items-center justify-center h-[1460px]"
         >
-            <div className="max-w-[1342px] w-full mx-auto lg:my-[226.86px] w-full items-center flex flex-col justify-center">
+            <div className="max-w-[1342px] w-full mx-auto lg:my-[226.86px] items-center flex flex-col justify-center">
                 <div className="flex items-center">
                     <div className="flex flex-col flex-1 items-center justify-center">
                         <h1
@@ -120,12 +99,12 @@ export default function Galery() {
                             }
                             style={{ lineHeight: "108%" }}
                         >
-                            Mais do que
+                            {data.title}
                         </h1>
                         {/* eslint-disable-next-line @next/next/no-img-element */}
                         <img
                             src="/common/handwrite-construir.svg"
-                            alt="Texto manuscrito: Construir"
+                            alt={`Texto manuscrito: ${data.subtitle}`}
                             className="mx-auto lg:-mt-[86px] w-[350px] lg:w-[650px] -mt-[66px] lg:-mb-[26px] -mb-[10px]"
                         />
 
@@ -136,13 +115,7 @@ export default function Galery() {
                             className=" text-md lg:text-[18px] text-[#181D23] text-center leading-relaxed lg:text-nowrap pb-[58px] lg:px-0 px-8"
                             style={{ lineHeight: "180%" }}
                         >
-                            Conheça alguns dos projetos que a Arqlopes
-                            Construções teve o prazer
-                            <span className="hidden lg:inline">
-                                <br />
-                            </span>
-                            de transformar em realidade. Nossa galeria destaca a
-                            excelência.
+                            {data.description}
                         </p>
                     </div>
                 </div>
@@ -154,7 +127,7 @@ export default function Galery() {
                                 onClick={() =>
                                     setCurrentIndex((prev) =>
                                         prev === 0
-                                            ? GaleryData.length - 3
+                                            ? projects.length - 3
                                             : prev - 1
                                     )
                                 }
@@ -172,7 +145,7 @@ export default function Galery() {
                             <button
                                 onClick={() =>
                                     setCurrentIndex((prev) =>
-                                        prev >= GaleryData.length - 3
+                                        prev >= projects.length - 3
                                             ? 0
                                             : prev + 1
                                     )
@@ -191,15 +164,13 @@ export default function Galery() {
                         </div>
 
                         <div className="flex flex-row w-full h-full justify-center">
-                            {GaleryData.slice(
+                            {projects.slice(
                                 currentIndex,
                                 currentIndex + 3
-                            ).map((item, idx) => (
+                            ).map((project, idx) => (
                                 <GaleryCard
-                                    key={item.title + idx}
-                                    imageSrc={item.imageSrc}
-                                    title={item.title}
-                                    tag={item.tag}
+                                    key={project.id + idx}
+                                    project={project}
                                 />
                             ))}
                         </div>
@@ -213,7 +184,7 @@ export default function Galery() {
                                 onClick={() =>
                                     setCurrentIndex((prev) =>
                                         prev === 0
-                                            ? GaleryData.length - 1
+                                            ? projects.length - 1
                                             : prev - 1
                                     )
                                 }
@@ -231,7 +202,7 @@ export default function Galery() {
                             <button
                                 onClick={() =>
                                     setCurrentIndex((prev) =>
-                                        prev === GaleryData.length - 1
+                                        prev === projects.length - 1
                                             ? 0
                                             : prev + 1
                                     )
@@ -249,9 +220,7 @@ export default function Galery() {
                             </button>
                         </div>
                         <GaleryCard
-                            imageSrc={GaleryData[currentIndex].imageSrc}
-                            title={GaleryData[currentIndex].title}
-                            tag={GaleryData[currentIndex].tag}
+                            project={projects[currentIndex]}
                         />
                     </div>
                 </div>

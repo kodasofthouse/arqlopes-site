@@ -8,11 +8,16 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState, useTransition } from "react";
 import { sendContactEmail } from "@/app/actions/send-email";
+import type { FooterContent } from "@/types/content";
 
 const spaceGrotesk = Space_Grotesk({ subsets: ["latin"] });
 const openSans = Open_Sans({ subsets: ["latin"] });
 
-export default function Footer() {
+interface FooterProps {
+    data: FooterContent;
+}
+
+export default function Footer({ data }: FooterProps) {
     const [isPending, startTransition] = useTransition();
     const [message, setMessage] = useState<{
         type: "success" | "error";
@@ -53,6 +58,16 @@ export default function Footer() {
         }
     };
 
+    // Parse CTA title for bold formatting
+    const ctaTitleParts = data.ctaTitle.split(/(\*\*.*?\*\*)/g);
+
+    // Social links array for rendering
+    const socialLinks = [
+        { Icon: Facebook, url: data.socialLinks.facebook },
+        { Icon: Instagram, url: data.socialLinks.instagram },
+        { Icon: Linkedin, url: data.socialLinks.linkedin },
+    ].filter(link => link.url);
+
     return (
         <footer
             id="contato"
@@ -66,16 +81,12 @@ export default function Footer() {
                     <div className="space-y-[66.74px] w-full">
                         <h2
                             className={`${spaceGrotesk.className} text-3xl lg:text-[36px] font-medium leading-tight text-center lg:text-left`}
-                        >
-                            Quer dar início à sua obra
-                            <br />
-                            com{" "}
-                            <span className="font-bold">
-                                quem entende do
-                                <br />
-                                assunto?
-                            </span>
-                        </h2>
+                            dangerouslySetInnerHTML={{
+                                __html: data.ctaTitle
+                                    .replace(/\*\*(.*?)\*\*/g, '<span class="font-bold">$1</span>')
+                                    .replace(/\n/g, '<br />')
+                            }}
+                        />
 
                         <div
                             className={`${openSans.className} space-y-10 flex flex-col items-center lg:items-start`}
@@ -83,13 +94,13 @@ export default function Footer() {
                             <div className="flex items-center gap-6">
                                 <Image
                                     src="/icons/phone-icon.svg"
-                                    alt="Ícone de reforma"
+                                    alt="Ícone de telefone"
                                     className="w-[38px] h-[38px]"
                                     width={38}
                                     height={38}
                                 />
                                 <span className="text-[22px] lg:text-[22px]">
-                                    (31) 97203-1160
+                                    {data.phone}
                                 </span>
                             </div>
 
@@ -102,7 +113,7 @@ export default function Footer() {
                                     height={38}
                                 />
                                 <span className="text-[22px] lg:text-[22px]">
-                                    contato@arqlopes.com.br
+                                    {data.email}
                                 </span>
                             </div>
 
@@ -115,8 +126,8 @@ export default function Footer() {
                                     height={38}
                                 />
                                 <div className="text-[22px] lg:text-[22px]">
-                                    <div>Rua Hidra, 301, Sala 304</div>
-                                    <div>Belo Horizonte</div>
+                                    <div>{data.address.line1}</div>
+                                    <div>{data.address.line2}</div>
                                 </div>
                             </div>
                         </div>
@@ -136,26 +147,6 @@ export default function Footer() {
                             </h3>
                         </div>
 
-                        {/* <div className="space-y-[20px] lg:space-y-[32px]">
-                            <Input
-                                placeholder="Prazer, qual seu nome?"
-                                className="bg-transparent border-[1.25px] pl-[38px] border-[#a78f62] text-white placeholder:text-white placeholder:text-[18px] h-[60px] lg:h-[74.75px] rounded-none"
-                            />
-                            <Input
-                                placeholder="Seu melhor e-mail"
-                                type="email"
-                                className="bg-transparent border-[1.25px] pl-[38px] border-[#a78f62] text-white placeholder:text-white placeholder:text-[18px] h-[60px] lg:h-[74.75px] rounded-none"
-                            />
-                            <Input
-                                placeholder="Sim, seu telefone"
-                                type="tel"
-                                className="bg-transparent border-[1.25px] pl-[38px] border-[#a78f62] text-white placeholder:text-white placeholder:text-[18px] h-[60px] lg:h-[74.75px] rounded-none"
-                            />
-                            <Button className="w-full lg:w-[258.51px] h-[50px] lg:h-[57.26px] bg-white text-black text-[18px] hover:bg-gray-200 font-medium border-[1.34px] border-[#A78F62]">
-                                Solicitar orçamento
-                            </Button>
-                        </div> */}
-                        {/* Success/Error Message */}
                         {message && (
                             <div
                                 className={`mb-4 p-3 rounded-md text-center ${
@@ -224,27 +215,26 @@ export default function Footer() {
                         <p
                             className="text-[18px] lg:text-[18px]"
                             style={{ lineHeight: "180%" }}
-                        >
-                            <span className="font-bold ">
-                                Mais do que construir:
-                            </span>{" "}
-                            realizamos
-                            <br />
-                            projetos com propósito.
-                        </p>
+                            dangerouslySetInnerHTML={{
+                                __html: data.tagline
+                                    .replace(/\*\*(.*?)\*\*/g, '<span class="font-bold">$1</span>')
+                                    .replace(/:/g, ':</span><span>')
+                                    .replace(/\n/g, '<br />')
+                            }}
+                        />
 
                         <div className="flex gap-4 justify-center lg:justify-start">
-                            {[Facebook, Instagram, Linkedin].map(
-                                (Icon, idx) => (
-                                    <Link
-                                        key={idx}
-                                        href={"#"}
-                                        className="w-[55px] h-[55px] lg:w-[65px] lg:h-[65px] hover:bg-white hover:text-[#001D1D] border border-white rounded-full flex items-center justify-center"
-                                    >
-                                        <Icon className="w-[24px] h-[24px] lg:w-[28px] lg:h-[28px]" />
-                                    </Link>
-                                )
-                            )}
+                            {socialLinks.map(({ Icon, url }, idx) => (
+                                <Link
+                                    key={idx}
+                                    href={url || "#"}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="w-[55px] h-[55px] lg:w-[65px] lg:h-[65px] hover:bg-white hover:text-[#001D1D] border border-white rounded-full flex items-center justify-center"
+                                >
+                                    <Icon className="w-[24px] h-[24px] lg:w-[28px] lg:h-[28px]" />
+                                </Link>
+                            ))}
                         </div>
                     </div>
 
@@ -302,15 +292,15 @@ export default function Footer() {
                         <h4
                             className={`${spaceGrotesk.className} text-[22px] lg:text-[22px] font-semibold mb-6`}
                         >
-                            Quer saber das novidades?
+                            {data.newsletterTitle}
                         </h4>
                         <div className="space-y-4 lg:space-y-[27px] flex flex-col items-center lg:items-start">
                             <Input
                                 placeholder="Seu melhor email"
                                 className="bg-white text-[#161616] text-[18px] lg:text-[18px] w-full max-w-[500px] h-[60px] lg:h-[80px] border border-[#FBB404] rounded-none placeholder:font-bold placeholder:text-[#161616] pl-4"
                             />
-                            <Button className="bg-white text-[#020202] hover:bg-gray-100 font-medium border border-[#A78F62] w-full max-w-[237px] h-[50px] lg:h-[61px] text-[18px] lg:text-[18px] rounded-none border-[1.34px] border-[#A78F62]">
-                                Ficar informado
+                            <Button className="bg-white text-[#020202] hover:bg-gray-100 font-medium w-full max-w-[237px] h-[50px] lg:h-[61px] text-[18px] lg:text-[18px] rounded-none border-[1.34px] border-[#A78F62]">
+                                {data.newsletterButtonText}
                             </Button>
                         </div>
                     </div>
