@@ -22,6 +22,8 @@ interface ImageUploaderProps {
   onRemove?: () => void;
   className?: string;
   aspectRatio?: "square" | "video" | "wide";
+  dropzoneClassName?: string;
+  imageFit?: "cover" | "contain";
 }
 
 export function ImageUploader({
@@ -31,6 +33,8 @@ export function ImageUploader({
   onRemove,
   className,
   aspectRatio = "video",
+  dropzoneClassName,
+  imageFit = "cover",
 }: ImageUploaderProps) {
   const [isUploading, setIsUploading] = useState(false);
   const [isDragging, setIsDragging] = useState(false);
@@ -124,6 +128,7 @@ export function ImageUploader({
         className={cn(
           "relative border-2 border-dashed rounded-lg transition-colors overflow-hidden",
           aspectClasses[aspectRatio],
+          dropzoneClassName,
           isDragging
             ? "border-[#045B64] bg-[#045B64]/5"
             : "border-gray-300 hover:border-gray-400",
@@ -136,7 +141,9 @@ export function ImageUploader({
               src={currentImage}
               alt="Uploaded image"
               fill
-              className="object-cover"
+              className={cn(
+                imageFit === "contain" ? "object-contain" : "object-cover"
+              )}
               sizes="(max-width: 768px) 100vw, 50vw"
             />
             <div className="absolute inset-0 bg-black/40 opacity-0 hover:opacity-100 transition-opacity flex items-center justify-center gap-2">

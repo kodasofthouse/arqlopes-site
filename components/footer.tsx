@@ -93,7 +93,7 @@ export default function Footer({ data }: FooterProps) {
                         >
                             <div className="flex items-center gap-6">
                                 <Image
-                                    src="https://pub-9def9de695584c4c8300c62ce8af1bbd.r2.dev/images/general/phone-icon.svg"
+                                    src="/icons/phone-icon.svg"
                                     alt="Ícone de telefone"
                                     className="w-[38px] h-[38px]"
                                     width={38}
@@ -106,7 +106,7 @@ export default function Footer({ data }: FooterProps) {
 
                             <div className="flex items-center gap-6">
                                 <Image
-                                    src="https://pub-9def9de695584c4c8300c62ce8af1bbd.r2.dev/images/general/mail-icon.svg"
+                                    src="/icons/mail-icon.svg"
                                     alt="Ícone de e-mail"
                                     className="w-[38px] h-[38px]"
                                     width={38}
@@ -119,7 +119,7 @@ export default function Footer({ data }: FooterProps) {
 
                             <div className="flex items-start gap-6">
                                 <Image
-                                    src="https://pub-9def9de695584c4c8300c62ce8af1bbd.r2.dev/images/general/location-icon.svg"
+                                    src="/icons/location-icon.svg"
                                     alt="Ícone de localização"
                                     className="w-[38px] h-[38px]"
                                     width={38}

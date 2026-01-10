@@ -219,6 +219,8 @@ export default function HeroEditor() {
                             updateItem({ ...service, description: v })
                           }
                           placeholder="Descrição do serviço"
+                          multiline
+                          rows={5}
                         />
                         <div className="space-y-2">
                           <Label className="text-xs font-medium text-gray-600">
@@ -231,6 +233,8 @@ export default function HeroEditor() {
                               updateItem({ ...service, icon: url })
                             }
                             aspectRatio="square"
+                            dropzoneClassName="w-16 h-16"
+                            imageFit="contain"
                           />
                         </div>
                         <ItemField

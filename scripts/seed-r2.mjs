@@ -16,10 +16,26 @@ import { join, basename, extname } from 'path';
 
 const BUCKET_NAME = 'arqlopes-assets';
 
+// Get content type based on file extension
+function getContentType(filename) {
+  const ext = extname(filename).toLowerCase();
+  const types = {
+    '.svg': 'image/svg+xml',
+    '.png': 'image/png',
+    '.jpg': 'image/jpeg',
+    '.jpeg': 'image/jpeg',
+    '.webp': 'image/webp',
+    '.gif': 'image/gif',
+    '.json': 'application/json',
+  };
+  return types[ext] || 'application/octet-stream';
+}
+
 // Helper to run wrangler commands
 function r2Put(key, localPath) {
-  const cmd = `npx wrangler r2 object put ${BUCKET_NAME}/${key} --file="${localPath}" --remote`;
-  console.log(`  ↑ ${key}`);
+  const contentType = getContentType(localPath);
+  const cmd = `npx wrangler r2 object put ${BUCKET_NAME}/${key} --file="${localPath}" --content-type="${contentType}" --remote`;
+  console.log(`  ↑ ${key} (${contentType})`);
   try {
     execSync(cmd, { stdio: 'pipe' });
     return true;

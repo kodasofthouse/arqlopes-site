@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import {
   Plus,
@@ -198,6 +199,9 @@ interface ItemFieldProps {
   onChange: (value: string) => void;
   placeholder?: string;
   type?: "text" | "url" | "color";
+  multiline?: boolean;
+  rows?: number;
+  className?: string;
 }
 
 export function ItemField({
@@ -206,17 +210,30 @@ export function ItemField({
   onChange,
   placeholder,
   type = "text",
+  multiline = false,
+  rows = 4,
+  className,
 }: ItemFieldProps) {
   return (
     <div className="space-y-1.5">
       <Label className="text-xs font-medium text-gray-600">{label}</Label>
-      <Input
-        type={type}
-        value={value}
-        onChange={(e) => onChange(e.target.value)}
-        placeholder={placeholder}
-        className="h-9"
-      />
+      {multiline ? (
+        <Textarea
+          value={value}
+          onChange={(e) => onChange(e.target.value)}
+          placeholder={placeholder}
+          rows={rows}
+          className={cn("min-h-[96px]", className)}
+        />
+      ) : (
+        <Input
+          type={type}
+          value={value}
+          onChange={(e) => onChange(e.target.value)}
+          placeholder={placeholder}
+          className={cn("h-9", className)}
+        />
+      )}
     </div>
   );
 }

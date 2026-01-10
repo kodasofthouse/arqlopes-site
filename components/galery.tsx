@@ -103,7 +103,7 @@ export default function Galery({ data }: GaleryProps) {
                         </h1>
                         {/* eslint-disable-next-line @next/next/no-img-element */}
                         <img
-                            src="https://pub-9def9de695584c4c8300c62ce8af1bbd.r2.dev/images/general/handwrite-construir.svg"
+                            src="/common/handwrite-construir.svg"
                             alt={`Texto manuscrito: ${data.subtitle}`}
                             className="mx-auto lg:-mt-[86px] w-[350px] lg:w-[650px] -mt-[66px] lg:-mb-[26px] -mb-[10px]"
                         />
@@ -136,7 +136,7 @@ export default function Galery({ data }: GaleryProps) {
                                 type="button"
                             >
                                 <Image
-                                    src="https://pub-9def9de695584c4c8300c62ce8af1bbd.r2.dev/images/general/arrow-left-icon.svg"
+                                    src="/icons/arrow-left-icon.svg"
                                     alt="Seta para a esquerda"
                                     width={24}
                                     height={24}
@@ -155,7 +155,7 @@ export default function Galery({ data }: GaleryProps) {
                                 type="button"
                             >
                                 <Image
-                                    src="https://pub-9def9de695584c4c8300c62ce8af1bbd.r2.dev/images/general/arrow-right-icon.svg"
+                                    src="/icons/arrow-right-icon.svg"
                                     alt="Seta para a direita"
                                     width={24}
                                     height={24}
@@ -193,7 +193,7 @@ export default function Galery({ data }: GaleryProps) {
                                 type="button"
                             >
                                 <Image
-                                    src="https://pub-9def9de695584c4c8300c62ce8af1bbd.r2.dev/images/general/arrow-left-icon.svg"
+                                    src="/icons/arrow-left-icon.svg"
                                     alt="Seta para a esquerda"
                                     width={20}
                                     height={20}
@@ -212,7 +212,7 @@ export default function Galery({ data }: GaleryProps) {
                                 type="button"
                             >
                                 <Image
-                                    src="https://pub-9def9de695584c4c8300c62ce8af1bbd.r2.dev/images/general/arrow-right-icon.svg"
+                                    src="/icons/arrow-right-icon.svg"
                                     alt="Seta para a direita"
                                     width={20}
                                     height={20}
