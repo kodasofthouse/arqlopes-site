@@ -137,15 +137,27 @@ export function ImageUploader({
       >
         {currentImage ? (
           <>
-            <Image
-              src={currentImage}
-              alt="Uploaded image"
-              fill
-              className={cn(
-                imageFit === "contain" ? "object-contain" : "object-cover"
-              )}
-              sizes="(max-width: 768px) 100vw, 50vw"
-            />
+            {currentImage.endsWith('.svg') || currentImage.includes('.svg?') ? (
+              // Use native img for SVG (Next.js Image has issues with SVG)
+              <img
+                src={currentImage}
+                alt="Uploaded image"
+                className={cn(
+                  "absolute inset-0 w-full h-full",
+                  imageFit === "contain" ? "object-contain" : "object-cover"
+                )}
+              />
+            ) : (
+              <Image
+                src={currentImage}
+                alt="Uploaded image"
+                fill
+                className={cn(
+                  imageFit === "contain" ? "object-contain" : "object-cover"
+                )}
+                sizes="(max-width: 768px) 100vw, 50vw"
+              />
+            )}
             <div className="absolute inset-0 bg-black/40 opacity-0 hover:opacity-100 transition-opacity flex items-center justify-center gap-2">
               <Button
                 type="button"
@@ -249,13 +261,22 @@ export function ImageListItem({
       )}
       onClick={onSelect}
     >
-      <Image
-        src={url}
-        alt=""
-        fill
-        className="object-cover"
-        sizes="200px"
-      />
+      {url.endsWith('.svg') || url.includes('.svg?') ? (
+        // Use native img for SVG
+        <img
+          src={url}
+          alt=""
+          className="absolute inset-0 w-full h-full object-contain p-2"
+        />
+      ) : (
+        <Image
+          src={url}
+          alt=""
+          fill
+          className="object-cover"
+          sizes="200px"
+        />
+      )}
       {onDelete && (
         <button
           type="button"

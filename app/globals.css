@@ -59,6 +59,15 @@ body {
   overflow-x: hidden;
 }
 
+/* When overlay is open - block ALL scrolling */
+body.overlay-open,
+body.overlay-open html {
+  overflow: hidden !important;
+  height: 100% !important;
+  position: fixed !important;
+  width: 100% !important;
+}
+
 @layer base {
   :root {
     --background: 0 0% 100%;

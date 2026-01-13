@@ -52,12 +52,23 @@ export interface AboutContent {
 // Gallery Section (content/gallery.json)
 // ============================================================================
 
+export interface ProjectTechnicalSheet {
+  location?: string;
+  area?: string;
+  year?: string;
+  client?: string;
+  architect?: string;
+  description?: string;
+}
+
 export interface GalleryProject {
   id: string;
   title: string;
   tag: string;
   image: string;
+  images?: string[];
   link?: string;
+  technicalSheet?: ProjectTechnicalSheet;
 }
 
 export interface GalleryContent {

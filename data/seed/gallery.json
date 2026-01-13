@@ -4,40 +4,136 @@
   "description": "Conheça alguns dos projetos que a Arqlopes Construções teve o prazer de transformar em realidade. Nossa galeria destaca a excelência.",
   "projects": [
     {
+      "id": "afya",
+      "title": "Afya",
+      "tag": "Comercial",
+      "image": "https://pub-9def9de695584c4c8300c62ce8af1bbd.r2.dev/images/gallery/afya/afya-0.webp",
+      "images": [
+        "https://pub-9def9de695584c4c8300c62ce8af1bbd.r2.dev/images/gallery/afya/afya-1.webp",
+        "https://pub-9def9de695584c4c8300c62ce8af1bbd.r2.dev/images/gallery/afya/afya-2.webp",
+        "https://pub-9def9de695584c4c8300c62ce8af1bbd.r2.dev/images/gallery/afya/afya-3.webp",
+        "https://pub-9def9de695584c4c8300c62ce8af1bbd.r2.dev/images/gallery/afya/afya-4.webp",
+        "https://pub-9def9de695584c4c8300c62ce8af1bbd.r2.dev/images/gallery/afya/afya-5.webp",
+        "https://pub-9def9de695584c4c8300c62ce8af1bbd.r2.dev/images/gallery/afya/afya-6.webp",
+        "https://pub-9def9de695584c4c8300c62ce8af1bbd.r2.dev/images/gallery/afya/afya-7.webp",
+        "https://pub-9def9de695584c4c8300c62ce8af1bbd.r2.dev/images/gallery/afya/afya-8.webp",
+        "https://pub-9def9de695584c4c8300c62ce8af1bbd.r2.dev/images/gallery/afya/afya-9.webp",
+        "https://pub-9def9de695584c4c8300c62ce8af1bbd.r2.dev/images/gallery/afya/afya-10.webp",
+        "https://pub-9def9de695584c4c8300c62ce8af1bbd.r2.dev/images/gallery/afya/afya-11.webp"
+      ],
+      "technicalSheet": {
+        "location": "Belo Horizonte, MG",
+        "area": "1.200 m²",
+        "year": "2024",
+        "client": "Afya",
+        "architect": "ArqLopes Construções",
+        "description": "Projeto comercial moderno que combina funcionalidade e estética. Espaços amplos e flexíveis pensados para otimizar o fluxo de trabalho e proporcionar bem-estar aos colaboradores."
+      }
+    },
+    {
       "id": "residencia-ck",
       "title": "Residência C|K",
       "tag": "Residencial",
-      "image": "https://pub-9def9de695584c4c8300c62ce8af1bbd.r2.dev/images/gallery/galery-01.jpg"
+      "image": "https://pub-9def9de695584c4c8300c62ce8af1bbd.r2.dev/images/gallery/galery-01.jpg",
+      "images": [
+        "https://pub-9def9de695584c4c8300c62ce8af1bbd.r2.dev/images/gallery/galery-02.jpg",
+        "https://pub-9def9de695584c4c8300c62ce8af1bbd.r2.dev/images/gallery/galery-03.jpg"
+      ],
+      "technicalSheet": {
+        "location": "São Paulo, SP",
+        "area": "450 m²",
+        "year": "2024",
+        "client": "Privado",
+        "architect": "ArqLopes Construções",
+        "description": "Residência contemporânea com design minimalista, integrando espaços internos e externos. O projeto prioriza iluminação natural e ventilação cruzada, criando ambientes confortáveis e sustentáveis."
+      }
     },
     {
       "id": "comercial-xyz",
       "title": "Comercial XYZ",
       "tag": "Comercial",
-      "image": "https://pub-9def9de695584c4c8300c62ce8af1bbd.r2.dev/images/gallery/galery-02.jpg"
+      "image": "https://pub-9def9de695584c4c8300c62ce8af1bbd.r2.dev/images/gallery/galery-02.jpg",
+      "images": [
+        "https://pub-9def9de695584c4c8300c62ce8af1bbd.r2.dev/images/gallery/galery-01.jpg",
+        "https://pub-9def9de695584c4c8300c62ce8af1bbd.r2.dev/images/gallery/galery-03.jpg"
+      ],
+      "technicalSheet": {
+        "location": "Campinas, SP",
+        "area": "1.200 m²",
+        "year": "2023",
+        "client": "XYZ Empresas",
+        "architect": "ArqLopes Construções",
+        "description": "Projeto comercial moderno que combina funcionalidade e estética. Espaços amplos e flexíveis pensados para otimizar o fluxo de trabalho e proporcionar bem-estar aos colaboradores."
+      }
     },
     {
       "id": "reforma-abc",
       "title": "Reforma ABC",
       "tag": "Reforma",
-      "image": "https://pub-9def9de695584c4c8300c62ce8af1bbd.r2.dev/images/gallery/galery-03.jpg"
+      "image": "https://pub-9def9de695584c4c8300c62ce8af1bbd.r2.dev/images/gallery/galery-03.jpg",
+      "images": [
+        "https://pub-9def9de695584c4c8300c62ce8af1bbd.r2.dev/images/gallery/galery-01.jpg",
+        "https://pub-9def9de695584c4c8300c62ce8af1bbd.r2.dev/images/gallery/galery-02.jpg"
+      ],
+      "technicalSheet": {
+        "location": "Santo André, SP",
+        "area": "280 m²",
+        "year": "2023",
+        "client": "Família ABC",
+        "architect": "ArqLopes Construções",
+        "description": "Reforma completa de residência dos anos 80, preservando elementos arquitetônicos originais enquanto moderniza instalações e layout para atender às necessidades atuais da família."
+      }
     },
     {
       "id": "residencia-ck2",
       "title": "Residência C|K2",
       "tag": "Residencial",
-      "image": "https://pub-9def9de695584c4c8300c62ce8af1bbd.r2.dev/images/gallery/galery-01.jpg"
+      "image": "https://pub-9def9de695584c4c8300c62ce8af1bbd.r2.dev/images/gallery/galery-01.jpg",
+      "images": [
+        "https://pub-9def9de695584c4c8300c62ce8af1bbd.r2.dev/images/gallery/galery-03.jpg"
+      ],
+      "technicalSheet": {
+        "location": "Guarulhos, SP",
+        "area": "380 m²",
+        "year": "2024",
+        "client": "Privado",
+        "architect": "ArqLopes Construções",
+        "description": "Segunda fase do projeto residencial C|K, expandindo a área construída com novos ambientes de lazer e área gourmet integrada ao jardim."
+      }
     },
     {
       "id": "comercial-xyz2",
       "title": "Comercial XYZ2",
       "tag": "Comercial",
-      "image": "https://pub-9def9de695584c4c8300c62ce8af1bbd.r2.dev/images/gallery/galery-02.jpg"
+      "image": "https://pub-9def9de695584c4c8300c62ce8af1bbd.r2.dev/images/gallery/galery-02.jpg",
+      "images": [
+        "https://pub-9def9de695584c4c8300c62ce8af1bbd.r2.dev/images/gallery/galery-01.jpg"
+      ],
+      "technicalSheet": {
+        "location": "Osasco, SP",
+        "area": "800 m²",
+        "year": "2024",
+        "client": "XYZ Empresas",
+        "architect": "ArqLopes Construções",
+        "description": "Filial do escritório XYZ com conceito open space e salas de reunião modulares. Design focado em colaboração e tecnologia."
+      }
     },
     {
       "id": "reforma-abc2",
       "title": "Reforma ABC2",
       "tag": "Reforma",
-      "image": "https://pub-9def9de695584c4c8300c62ce8af1bbd.r2.dev/images/gallery/galery-03.jpg"
+      "image": "https://pub-9def9de695584c4c8300c62ce8af1bbd.r2.dev/images/gallery/galery-03.jpg",
+      "images": [
+        "https://pub-9def9de695584c4c8300c62ce8af1bbd.r2.dev/images/gallery/galery-02.jpg"
+      ],
+      "technicalSheet": {
+        "location": "São Bernardo do Campo, SP",
+        "area": "350 m²",
+        "year": "2024",
+        "client": "Família ABC",
+        "architect": "ArqLopes Construções",
+        "description": "Renovação de imóvel comercial para uso residencial. Conversão completa de layout com foco em conforto acústico e eficiência energética."
+      }
     }
   ]
 }

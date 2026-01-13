@@ -15,24 +15,31 @@
   ],
   "services": [
     {
-      "id": "obras-comerciais",
-      "title": "Obras Comerciais",
-      "description": "Execução completa para franquias, lojas e restaurantes. Já realizamos obras para marcas como Burger King e Data Energia.",
+      "id": "obras-residenciais",
+      "title": "Obras Residenciais",
+      "description": "Residências de alto padrão, com acabamento impecável, conforto, durabilidade e atenção a cada detalhe.",
       "icon": "https://pub-9def9de695584c4c8300c62ce8af1bbd.r2.dev/images/general/comercial-construction-icon.svg",
       "ctaText": "Faça um orçamento",
       "color": "#045D66"
     },
     {
-      "id": "construcoes-residenciais",
-      "title": "Construções Residenciais",
-      "description": "Casas, edifícios e condomínios de alto padrão, com foco em durabilidade, beleza e conforto.",
+      "id": "obras-educacionais",
+      "title": "Obras Educacionais",
+      "description": "Instituições de ensino seguras e funcionais, com infraestrutura planejada para excelência e ambientes que favorecem a aprendizagem.",
       "icon": "https://pub-9def9de695584c4c8300c62ce8af1bbd.r2.dev/images/general/residential-construction-icon.svg",
       "color": "#E73823"
     },
     {
-      "id": "reformas-tecnicas",
-      "title": "Reformas Técnicas",
-      "description": "Requalificações estruturais e remodelações com mínimo impacto e máximo cuidado com o espaço já existente.",
+      "id": "obras-institucionais-e-corporativas",
+      "title": "Obras Institucionais e Corporativas",
+      "description": "Sedes e espaços corporativos eficientes, acessíveis, duradouros e projetados para potencializar produtividade.",
+      "icon": "https://pub-9def9de695584c4c8300c62ce8af1bbd.r2.dev/images/general/tecnical-reform-icon.svg",
+      "color": "#FCB404"
+    },
+    {
+      "id": "obras-comerciais",
+      "title": "Obras Comerciais",
+      "description": "Lojas, franquias e centros comerciais, incluindo parcerias BTS, implantação de novos negócios e gestão do imóvel.",
       "icon": "https://pub-9def9de695584c4c8300c62ce8af1bbd.r2.dev/images/general/tecnical-reform-icon.svg",
       "color": "#FCB404"
     }
