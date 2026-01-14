@@ -1,8 +1,7 @@
 "use client";
 
-import Image from "next/image";
 import { Space_Grotesk } from "next/font/google";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo } from "react";
 import type { GalleryContent, GalleryProject } from "@/types/content";
 
 const spaceGrotesk = Space_Grotesk({ subsets: ["latin"] });
@@ -10,6 +9,57 @@ const spaceGrotesk = Space_Grotesk({ subsets: ["latin"] });
 interface GaleryProps {
     data: GalleryContent;
 }
+
+// ============================================================================
+// Filter Pills Component
+// ============================================================================
+
+interface FilterPillsProps {
+    tags: string[];
+    activeFilter: string | null;
+    onFilterChange: (tag: string | null) => void;
+}
+
+const FilterPills = ({ tags, activeFilter, onFilterChange }: FilterPillsProps) => {
+    return (
+        <div className="flex flex-wrap justify-center gap-3 mb-10 md:mb-14">
+            {/* "Todos" pill */}
+            <button
+                onClick={() => onFilterChange(null)}
+                className={`
+                    ${spaceGrotesk.className}
+                    px-5 py-2 rounded-full text-sm font-medium
+                    transition-all duration-300
+                    ${activeFilter === null
+                        ? "bg-[#045B64] text-white"
+                        : "bg-[#F5F5F5] text-[#2A2524] hover:bg-[#E8E8E8]"
+                    }
+                `}
+            >
+                Todos
+            </button>
+            
+            {/* Tag pills */}
+            {tags.map((tag) => (
+                <button
+                    key={tag}
+                    onClick={() => onFilterChange(tag)}
+                    className={`
+                        ${spaceGrotesk.className}
+                        px-5 py-2 rounded-full text-sm font-medium
+                        transition-all duration-300
+                        ${activeFilter === tag
+                            ? "bg-[#045B64] text-white"
+                            : "bg-[#F5F5F5] text-[#2A2524] hover:bg-[#E8E8E8]"
+                        }
+                    `}
+                >
+                    {tag}
+                </button>
+            ))}
+        </div>
+    );
+};
 
 // ============================================================================
 // Project Overlay Component
@@ -116,7 +166,7 @@ const ProjectOverlay = ({ project, onClose }: ProjectOverlayProps) => {
 };
 
 // ============================================================================
-// Gallery Card Component
+// Gallery Card Component - Grid Version (Always Visible Info)
 // ============================================================================
 
 const GaleryCard = ({
@@ -128,7 +178,7 @@ const GaleryCard = ({
 }) => {
     return (
         <div
-            className="flex w-full relative group transition-transform duration-300 hover:scale-[1.01] z-10 hover:z-20 cursor-pointer"
+            className="relative overflow-hidden cursor-pointer group"
             onClick={onClick}
             role="button"
             tabIndex={0}
@@ -139,68 +189,85 @@ const GaleryCard = ({
                 }
             }}
         >
-            <div
-                className="absolute inset-0 flex items-end left-0 pl-[36px] pb-[46px] 
-                    opacity-100 md:opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20 pointer-events-none"
-            >
-                <div className="flex flex-col items-start">
+            {/* Image Container */}
+            <div className="relative aspect-[4/3] overflow-hidden">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                    src={project.image}
+                    alt={project.title}
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                />
+                
+                {/* Gradient Overlay - Always visible */}
+                <div
+                    className="absolute inset-0 pointer-events-none"
+                    style={{
+                        background:
+                            "linear-gradient(0deg, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.3) 40%, rgba(0,0,0,0) 70%)",
+                    }}
+                />
+
+                {/* Content - Always visible */}
+                <div className="absolute inset-0 flex flex-col justify-end p-5 md:p-6">
+                    {/* Tag */}
+                    <span className="bg-[#C17F6F] w-fit text-[#020202] text-[10px] md:text-xs text-center font-medium px-4 py-1.5 rounded-full mb-3">
+                        {project.tag}
+                    </span>
+                    
+                    {/* Title */}
                     <h2
                         className={
                             spaceGrotesk.className +
-                            " text-[#C17F6F] text-[28px] md:text-[34px] font-medium pb-2"
+                            " text-white text-xl md:text-2xl font-medium mb-3"
                         }
                     >
                         {project.title}
                     </h2>
-                    <span className="bg-[#C17F6F] w-[140px] md:w-[160px] text-[#020202] text-xs text-center font-medium py-2 rounded-full mb-6 md:mb-[51px]">
-                        {project.tag}
-                    </span>
+                    
+                    {/* Ver Projeto Button */}
                     <span
                         className={
                             spaceGrotesk.className +
-                            " relative text-white text-[16px] md:text-[18px] font-medium"
+                            " text-[#C17F6F] text-sm md:text-base font-medium inline-flex items-center gap-2 group-hover:gap-3 transition-all"
                         }
                     >
-                        <span className="relative inline-flex items-start gap-2">
-                            <span className="mb-2">Ver projeto</span>
-                            <span
-                                className="absolute left-0 bottom-0"
-                                style={{
-                                    width: "75%",
-                                    height: "2px",
-                                    background: "currentColor",
-                                    borderRadius: "1px",
-                                    display: "block",
-                                }}
-                                aria-hidden="true"
-                            />
-                        </span>
+                        Ver projeto
+                        <svg 
+                            width="16" 
+                            height="16" 
+                            viewBox="0 0 24 24" 
+                            fill="none" 
+                            stroke="currentColor" 
+                            strokeWidth="2"
+                            className="transition-transform group-hover:translate-x-1"
+                        >
+                            <path d="M5 12h14M12 5l7 7-7 7"/>
+                        </svg>
                     </span>
                 </div>
             </div>
-
-            <div
-                className="absolute inset-0 pointer-events-none"
-                style={{
-                    background:
-                        "linear-gradient(20deg, rgba(0, 0, 0, 0.65) 0%, rgba(0,0,0,0) 35%)",
-                }}
-            />
-
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-                src={project.image}
-                alt={project.title}
-                className="w-full h-full object-cover"
-            />
         </div>
     );
 };
 
 export default function Galery({ data }: GaleryProps) {
-    const [currentIndex, setCurrentIndex] = useState<number>(0);
     const [selectedProject, setSelectedProject] = useState<GalleryProject | null>(null);
+    const [activeFilter, setActiveFilter] = useState<string | null>(null);
     const projects = data.projects;
+
+    // Extract unique tags from projects
+    const uniqueTags = useMemo(() => {
+        const tags = projects.map((project) => project.tag);
+        return [...new Set(tags)].sort();
+    }, [projects]);
+
+    // Filter projects based on active filter
+    const filteredProjects = useMemo(() => {
+        if (activeFilter === null) {
+            return projects;
+        }
+        return projects.filter((project) => project.tag === activeFilter);
+    }, [projects, activeFilter]);
 
     const openProject = (project: GalleryProject) => {
         setSelectedProject(project);
@@ -222,145 +289,64 @@ export default function Galery({ data }: GaleryProps) {
 
             <section
                 id="galery"
-                className="flex bg-white border-t border-[#E5E5E5] flex-col items-center justify-center h-[1460px]"
+                className="bg-white border-t border-[#E5E5E5] py-16 md:py-24"
             >
-                <div className="max-w-[1342px] w-full mx-auto lg:my-[226.86px] items-center flex flex-col justify-center">
-                    <div className="flex items-center">
-                        <div className="flex flex-col flex-1 items-center justify-center">
-                            <h1
-                                className={
-                                    spaceGrotesk.className +
-                                    " text-2xl text-[#2A2524] lg:text-[50px] font-medium lg:text-nowrap pb-[32px] text-center"
-                                }
-                                style={{ lineHeight: "108%" }}
-                            >
-                                {data.title}
-                            </h1>
-                            {/* eslint-disable-next-line @next/next/no-img-element */}
-                            <img
-                                src="/common/handwrite-construir.svg"
-                                alt={`Texto manuscrito: ${data.subtitle}`}
-                                className="mx-auto lg:-mt-[86px] w-[350px] lg:w-[650px] -mt-[66px] lg:-mb-[26px] -mb-[10px]"
-                            />
+                <div className="max-w-[1342px] w-full mx-auto px-4 md:px-8">
+                    {/* Header */}
+                    <div className="flex flex-col items-center justify-center mb-12 md:mb-16">
+                        <h1
+                            className={
+                                spaceGrotesk.className +
+                                " text-2xl text-[#2A2524] lg:text-[50px] font-medium lg:text-nowrap pb-[32px] text-center"
+                            }
+                            style={{ lineHeight: "108%" }}
+                        >
+                            {data.title}
+                        </h1>
+                        {/* eslint-disable-next-line @next/next/no-img-element */}
+                        <img
+                            src="/common/handwrite-construir.svg"
+                            alt={`Texto manuscrito: ${data.subtitle}`}
+                            className="mx-auto lg:-mt-[86px] w-[350px] lg:w-[650px] -mt-[66px] lg:-mb-[26px] -mb-[10px]"
+                        />
 
-                            <p className="text-md lg:text-[21.37px] text-[#181D23] text-center leading-relaxed lg:text-nowrap pb-[58px]">
-                                realizamos projetos com propósito.
-                            </p>
-                            <p
-                                className=" text-md lg:text-[18px] text-[#181D23] text-center leading-relaxed lg:text-nowrap pb-[58px] lg:px-0 px-8"
-                                style={{ lineHeight: "180%" }}
-                            >
-                                {data.description}
-                            </p>
-                        </div>
+                        <p className="text-md lg:text-[21.37px] text-[#181D23] text-center leading-relaxed lg:text-nowrap pb-[32px]">
+                            realizamos projetos com propósito.
+                        </p>
+                        <p
+                            className="text-md lg:text-[18px] text-[#181D23] text-center leading-relaxed max-w-[800px]"
+                            style={{ lineHeight: "180%" }}
+                        >
+                            {data.description}
+                        </p>
                     </div>
 
-                    <div className="h-[867.63px] w-full hidden md:flex">
-                        <div className="relative w-full h-full flex items-center">
-                            <div className="absolute bottom-[62px] right-[62px] flex items-center justify-center gap-4">
-                                <button
-                                    onClick={() =>
-                                        setCurrentIndex((prev) =>
-                                            prev === 0
-                                                ? projects.length - 3
-                                                : prev - 1
-                                        )
-                                    }
-                                    className="z-30 bg-[#045B64] rounded-full h-[75px] w-[75px] flex items-center justify-center transition-all border border-transparent hover:border-white"
-                                    aria-label="Anterior"
-                                    type="button"
-                                >
-                                    <Image
-                                        src="/icons/arrow-left-icon.svg"
-                                        alt="Seta para a esquerda"
-                                        width={24}
-                                        height={24}
-                                    />
-                                </button>
-                                <button
-                                    onClick={() =>
-                                        setCurrentIndex((prev) =>
-                                            prev >= projects.length - 3
-                                                ? 0
-                                                : prev + 1
-                                        )
-                                    }
-                                    className="z-30 bg-[#045B64] rounded-full p-3 h-[75px] w-[75px] flex items-center justify-center transition-all border border-transparent hover:border-white"
-                                    aria-label="Próximo"
-                                    type="button"
-                                >
-                                    <Image
-                                        src="/icons/arrow-right-icon.svg"
-                                        alt="Seta para a direita"
-                                        width={24}
-                                        height={24}
-                                    />
-                                </button>
-                            </div>
+                    {/* Filter Pills */}
+                    <FilterPills
+                        tags={uniqueTags}
+                        activeFilter={activeFilter}
+                        onFilterChange={setActiveFilter}
+                    />
 
-                            <div className="flex flex-row w-full h-full justify-center">
-                                {projects.slice(
-                                    currentIndex,
-                                    currentIndex + 3
-                                ).map((project, idx) => (
-                                    <GaleryCard
-                                        key={project.id + idx}
-                                        project={project}
-                                        onClick={() => openProject(project)}
-                                    />
-                                ))}
-                            </div>
-                        </div>
-                    </div>
-
-                    <div className="md:hidden w-full px-4 relative ">
-                        <div className="w-full h-full relative flex items-center justify-center">
-                            <div className="absolute bottom-[50%] w-full flex items-center justify-between px-4 z-30">
-                                <button
-                                    onClick={() =>
-                                        setCurrentIndex((prev) =>
-                                            prev === 0
-                                                ? projects.length - 1
-                                                : prev - 1
-                                        )
-                                    }
-                                    className="bg-[#045B64] rounded-full h-[50px] w-[50px] flex items-center justify-center border border-transparent hover:border-white transition-all"
-                                    aria-label="Anterior"
-                                    type="button"
-                                >
-                                    <Image
-                                        src="/icons/arrow-left-icon.svg"
-                                        alt="Seta para a esquerda"
-                                        width={20}
-                                        height={20}
-                                    />
-                                </button>
-                                <button
-                                    onClick={() =>
-                                        setCurrentIndex((prev) =>
-                                            prev === projects.length - 1
-                                                ? 0
-                                                : prev + 1
-                                        )
-                                    }
-                                    className="bg-[#045B64] rounded-full h-[50px] w-[50px] flex items-center justify-center border border-transparent hover:border-white transition-all"
-                                    aria-label="Próximo"
-                                    type="button"
-                                >
-                                    <Image
-                                        src="/icons/arrow-right-icon.svg"
-                                        alt="Seta para a direita"
-                                        width={20}
-                                        height={20}
-                                    />
-                                </button>
-                            </div>
+                    {/* Grid - 3 items per row on desktop, 1 on mobile */}
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+                        {filteredProjects.map((project) => (
                             <GaleryCard
-                                project={projects[currentIndex]}
-                                onClick={() => openProject(projects[currentIndex])}
+                                key={project.id}
+                                project={project}
+                                onClick={() => openProject(project)}
                             />
-                        </div>
+                        ))}
                     </div>
+
+                    {/* Empty state when no projects match filter */}
+                    {filteredProjects.length === 0 && (
+                        <div className="text-center py-16">
+                            <p className={spaceGrotesk.className + " text-[#666] text-lg"}>
+                                Nenhum projeto encontrado para este filtro.
+                            </p>
+                        </div>
+                    )}
                 </div>
             </section>
         </>

@@ -57,6 +57,14 @@
 html,
 body {
   overflow-x: hidden;
+  max-width: 100vw;
+}
+
+/* Prevent horizontal scroll on mobile */
+#__next,
+main {
+  overflow-x: hidden;
+  max-width: 100vw;
 }
 
 /* When overlay is open - block ALL scrolling */

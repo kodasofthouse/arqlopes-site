@@ -31,6 +31,142 @@
       }
     },
     {
+      "id": "res-jonatas",
+      "title": "Residência Jonatas",
+      "tag": "Residencial",
+      "image": "https://pub-9def9de695584c4c8300c62ce8af1bbd.r2.dev/images/gallery/res-jonatas/res-jonas-1.webp",
+      "images": [
+        "https://pub-9def9de695584c4c8300c62ce8af1bbd.r2.dev/images/gallery/res-jonatas/res-jonas-2.webp",
+        "https://pub-9def9de695584c4c8300c62ce8af1bbd.r2.dev/images/gallery/res-jonatas/res-jonas-3.webp",
+        "https://pub-9def9de695584c4c8300c62ce8af1bbd.r2.dev/images/gallery/res-jonatas/res-jonas-4.webp",
+        "https://pub-9def9de695584c4c8300c62ce8af1bbd.r2.dev/images/gallery/res-jonatas/res-jonas-5.webp",
+        "https://pub-9def9de695584c4c8300c62ce8af1bbd.r2.dev/images/gallery/res-jonatas/res-jonas-6.webp",
+        "https://pub-9def9de695584c4c8300c62ce8af1bbd.r2.dev/images/gallery/res-jonatas/res-jonas-7.webp",
+        "https://pub-9def9de695584c4c8300c62ce8af1bbd.r2.dev/images/gallery/res-jonatas/res-jonas-8.webp",
+        "https://pub-9def9de695584c4c8300c62ce8af1bbd.r2.dev/images/gallery/res-jonatas/res-jonas-9.webp",
+        "https://pub-9def9de695584c4c8300c62ce8af1bbd.r2.dev/images/gallery/res-jonatas/res-jonas-10.webp",
+        "https://pub-9def9de695584c4c8300c62ce8af1bbd.r2.dev/images/gallery/res-jonatas/res-jonas-11.webp",
+        "https://pub-9def9de695584c4c8300c62ce8af1bbd.r2.dev/images/gallery/res-jonatas/res-jonas-12.webp",
+        "https://pub-9def9de695584c4c8300c62ce8af1bbd.r2.dev/images/gallery/res-jonatas/res-jonas-13.webp",
+        "https://pub-9def9de695584c4c8300c62ce8af1bbd.r2.dev/images/gallery/res-jonatas/res-jonas-14.webp",
+        "https://pub-9def9de695584c4c8300c62ce8af1bbd.r2.dev/images/gallery/res-jonatas/res-jonas-15.webp",
+        "https://pub-9def9de695584c4c8300c62ce8af1bbd.r2.dev/images/gallery/res-jonatas/res-jonas-16.webp",
+        "https://pub-9def9de695584c4c8300c62ce8af1bbd.r2.dev/images/gallery/res-jonatas/res-jonas-17.webp",
+        "https://pub-9def9de695584c4c8300c62ce8af1bbd.r2.dev/images/gallery/res-jonatas/res-jonas-18.webp"
+      ],
+      "technicalSheet": {
+        "location": "",
+        "area": "",
+        "year": "",
+        "client": "",
+        "architect": "ArqLopes Construções",
+        "description": ""
+      }
+    },
+    {
+      "id": "nw",
+      "title": "NW",
+      "tag": "Comercial",
+      "image": "https://pub-9def9de695584c4c8300c62ce8af1bbd.r2.dev/images/gallery/nw/nw-1.webp",
+      "images": [
+        "https://pub-9def9de695584c4c8300c62ce8af1bbd.r2.dev/images/gallery/nw/nw-2.webp",
+        "https://pub-9def9de695584c4c8300c62ce8af1bbd.r2.dev/images/gallery/nw/nw-3.webp",
+        "https://pub-9def9de695584c4c8300c62ce8af1bbd.r2.dev/images/gallery/nw/nw-4.webp"
+      ],
+      "technicalSheet": {
+        "location": "",
+        "area": "",
+        "year": "",
+        "client": "NW",
+        "architect": "ArqLopes Construções",
+        "description": ""
+      }
+    },
+    {
+      "id": "escola-americana",
+      "title": "Escola Americana",
+      "tag": "Institucional",
+      "image": "https://pub-9def9de695584c4c8300c62ce8af1bbd.r2.dev/images/gallery/escola-americana/americana-1.webp",
+      "images": [
+        "https://pub-9def9de695584c4c8300c62ce8af1bbd.r2.dev/images/gallery/escola-americana/americana-2.webp"
+      ],
+      "technicalSheet": {
+        "location": "",
+        "area": "",
+        "year": "",
+        "client": "Escola Americana",
+        "architect": "ArqLopes Construções",
+        "description": ""
+      }
+    },
+    {
+      "id": "cres",
+      "title": "CRES",
+      "tag": "Comercial",
+      "image": "https://pub-9def9de695584c4c8300c62ce8af1bbd.r2.dev/images/gallery/cres/cres1.webp",
+      "images": [
+        "https://pub-9def9de695584c4c8300c62ce8af1bbd.r2.dev/images/gallery/cres/cres2.webp",
+        "https://pub-9def9de695584c4c8300c62ce8af1bbd.r2.dev/images/gallery/cres/cres3.webp",
+        "https://pub-9def9de695584c4c8300c62ce8af1bbd.r2.dev/images/gallery/cres/cres4.webp",
+        "https://pub-9def9de695584c4c8300c62ce8af1bbd.r2.dev/images/gallery/cres/cres5.webp",
+        "https://pub-9def9de695584c4c8300c62ce8af1bbd.r2.dev/images/gallery/cres/cres6.webp",
+        "https://pub-9def9de695584c4c8300c62ce8af1bbd.r2.dev/images/gallery/cres/cres7.webp",
+        "https://pub-9def9de695584c4c8300c62ce8af1bbd.r2.dev/images/gallery/cres/cres8.webp",
+        "https://pub-9def9de695584c4c8300c62ce8af1bbd.r2.dev/images/gallery/cres/cres9.webp",
+        "https://pub-9def9de695584c4c8300c62ce8af1bbd.r2.dev/images/gallery/cres/cres10.webp",
+        "https://pub-9def9de695584c4c8300c62ce8af1bbd.r2.dev/images/gallery/cres/cres11.webp",
+        "https://pub-9def9de695584c4c8300c62ce8af1bbd.r2.dev/images/gallery/cres/cres12.webp",
+        "https://pub-9def9de695584c4c8300c62ce8af1bbd.r2.dev/images/gallery/cres/cres13.webp",
+        "https://pub-9def9de695584c4c8300c62ce8af1bbd.r2.dev/images/gallery/cres/cres14.webp",
+        "https://pub-9def9de695584c4c8300c62ce8af1bbd.r2.dev/images/gallery/cres/cres15.webp",
+        "https://pub-9def9de695584c4c8300c62ce8af1bbd.r2.dev/images/gallery/cres/cres16.webp",
+        "https://pub-9def9de695584c4c8300c62ce8af1bbd.r2.dev/images/gallery/cres/cres17.webp",
+        "https://pub-9def9de695584c4c8300c62ce8af1bbd.r2.dev/images/gallery/cres/cres18.webp",
+        "https://pub-9def9de695584c4c8300c62ce8af1bbd.r2.dev/images/gallery/cres/cres19.webp",
+        "https://pub-9def9de695584c4c8300c62ce8af1bbd.r2.dev/images/gallery/cres/cres20.webp",
+        "https://pub-9def9de695584c4c8300c62ce8af1bbd.r2.dev/images/gallery/cres/cres21.webp",
+        "https://pub-9def9de695584c4c8300c62ce8af1bbd.r2.dev/images/gallery/cres/cres22.webp"
+      ],
+      "technicalSheet": {
+        "location": "",
+        "area": "",
+        "year": "",
+        "client": "CRES",
+        "architect": "ArqLopes Construções",
+        "description": ""
+      }
+    },
+    {
+      "id": "colegio-imaculada",
+      "title": "Colégio Imaculada",
+      "tag": "Institucional",
+      "image": "https://pub-9def9de695584c4c8300c62ce8af1bbd.r2.dev/images/gallery/colegio-imaculada/imaculada-1.webp",
+      "images": [
+        "https://pub-9def9de695584c4c8300c62ce8af1bbd.r2.dev/images/gallery/colegio-imaculada/imaculada-2.webp",
+        "https://pub-9def9de695584c4c8300c62ce8af1bbd.r2.dev/images/gallery/colegio-imaculada/imaculada-3.webp",
+        "https://pub-9def9de695584c4c8300c62ce8af1bbd.r2.dev/images/gallery/colegio-imaculada/imaculada-4.webp",
+        "https://pub-9def9de695584c4c8300c62ce8af1bbd.r2.dev/images/gallery/colegio-imaculada/imaculada-5.webp",
+        "https://pub-9def9de695584c4c8300c62ce8af1bbd.r2.dev/images/gallery/colegio-imaculada/imaculada-6.webp",
+        "https://pub-9def9de695584c4c8300c62ce8af1bbd.r2.dev/images/gallery/colegio-imaculada/imaculada-7.webp",
+        "https://pub-9def9de695584c4c8300c62ce8af1bbd.r2.dev/images/gallery/colegio-imaculada/imaculada-8.webp",
+        "https://pub-9def9de695584c4c8300c62ce8af1bbd.r2.dev/images/gallery/colegio-imaculada/imaculada-9.webp",
+        "https://pub-9def9de695584c4c8300c62ce8af1bbd.r2.dev/images/gallery/colegio-imaculada/imaculada-10.webp",
+        "https://pub-9def9de695584c4c8300c62ce8af1bbd.r2.dev/images/gallery/colegio-imaculada/imaculada-11.webp",
+        "https://pub-9def9de695584c4c8300c62ce8af1bbd.r2.dev/images/gallery/colegio-imaculada/imaculada-12.webp",
+        "https://pub-9def9de695584c4c8300c62ce8af1bbd.r2.dev/images/gallery/colegio-imaculada/imaculada-13.webp",
+        "https://pub-9def9de695584c4c8300c62ce8af1bbd.r2.dev/images/gallery/colegio-imaculada/imaculada-14.webp",
+        "https://pub-9def9de695584c4c8300c62ce8af1bbd.r2.dev/images/gallery/colegio-imaculada/imaculada-15.webp"
+      ],
+      "technicalSheet": {
+        "location": "",
+        "area": "",
+        "year": "",
+        "client": "Colégio Imaculada",
+        "architect": "ArqLopes Construções",
+        "description": ""
+      }
+    },
+    {
       "id": "residencia-ck",
       "title": "Residência C|K",
       "tag": "Residencial",

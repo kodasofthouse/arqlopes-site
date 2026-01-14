@@ -84,7 +84,7 @@ export default function Navbar() {
                             Nosso Portfolio
                         </button>
                         <button
-                            onClick={() => {}}
+                            onClick={() => handleScrollTo("contato")}
                             className="text-white hover:text-[#d9d9d9] transition-colors"
                         >
                             Orçamento
@@ -92,7 +92,7 @@ export default function Navbar() {
                     </div>
 
                     <Button
-                        onClick={() => {}}
+                        onClick={() => handleScrollTo("contato")}
                         className="bg-white text-[16px] text-[#191919] font-medium hover:bg-[#d9d9d9] hidden md:flex rounded-none px-8 py-6"
                     >
                         Faça um orçamento
@@ -141,9 +141,9 @@ export default function Navbar() {
                     <button onClick={() => handleScrollTo("galery")}>
                         Nosso Portfolio
                     </button>
-                    <button onClick={() => {}}>Orçamento</button>
+                    <button onClick={() => handleScrollTo("contato")}>Orçamento</button>
                     <Button
-                        onClick={() => {}}
+                        onClick={() => handleScrollTo("contato")}
                         className="mt-8 bg-white text-[#191919] font-medium hover:bg-[#d9d9d9] rounded-none border border-[#7C6B4D] w-full h-[40px]"
                     >
                         Faça um orçamento

@@ -1,9 +1,7 @@
 "use client";
 
-import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Space_Grotesk } from "next/font/google";
-import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import clsx from "clsx";
@@ -18,6 +16,18 @@ interface HeroProps {
 export default function Hero({ data }: HeroProps) {
     const [currentIndex, setCurrentIndex] = useState(0);
     const bgRefs = useRef<(HTMLDivElement | null)[]>([]);
+
+    const handleScrollTo = (id: string) => {
+        const section = document.getElementById(id);
+        if (section) {
+            const yOffset = -100;
+            const y =
+                section.getBoundingClientRect().top +
+                window.pageYOffset +
+                yOffset;
+            window.scrollTo({ top: y, behavior: "smooth" });
+        }
+    };
 
     const backgroundImages = data.backgroundImages;
 
@@ -83,7 +93,8 @@ export default function Hero({ data }: HeroProps) {
     }, []);
 
     return (
-        <section id="hero" className="bg-[#3E4247] overflow-hidden">
+        <section id="hero" className="bg-[#3E4247] overflow-hidden relative">
+            <div className="absolute inset-0 overflow-hidden">
             {backgroundImages.map((src, i) => (
                 <div
                     key={i}
@@ -101,6 +112,7 @@ export default function Hero({ data }: HeroProps) {
                     }}
                 />
             ))}
+            </div>
 
             <div className="relative min-h-screen flex flex-col z-10 justify-center px-4 py-16 md:h-[108vh] lg:py-0">
                 <div className="max-w-[1428.1px] mx-auto w-full sm:px-6 min-[1536px]:px-6 min-[1537px]:px-0 relative z-10">
@@ -129,7 +141,10 @@ export default function Hero({ data }: HeroProps) {
                                 {data.subtitle}
                             </p>
 
-                            <Button className="bg-white text-[#181C20] text-lg hover:bg-[#d9d9d9] rounded-none font-medium px-10 py-8">
+                            <Button 
+                                onClick={() => handleScrollTo("contato")}
+                                className="bg-white text-[#181C20] text-lg hover:bg-[#d9d9d9] rounded-none font-medium px-10 py-8"
+                            >
                                 {data.ctaButton}
                             </Button>
                         </div>
@@ -176,15 +191,15 @@ export default function Hero({ data }: HeroProps) {
                                 {service.description}
                             </p>
                             {service.ctaText && (
-                                <Link
-                                    href={"#"}
+                                <button
+                                    onClick={() => handleScrollTo("contato")}
                                     className={
                                         spaceGrotesk.className +
                                         " text-white border-b border-white pb-1 text-[18px] hover:opacity-80 transition-opacity"
                                     }
                                 >
                                     {service.ctaText}
-                                </Link>
+                                </button>
                             )}
                         </div>
                     ))}

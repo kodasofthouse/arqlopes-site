@@ -99,9 +99,12 @@ export default function Footer({ data }: FooterProps) {
                                     width={38}
                                     height={38}
                                 />
-                                <span className="text-[22px] lg:text-[22px]">
+                                <a
+                                    href={`tel:+55${data.phone.replace(/\D/g, '')}`}
+                                    className="text-[17.6px] lg:text-[17.6px] lg:pointer-events-none lg:cursor-default"
+                                >
                                     {data.phone}
-                                </span>
+                                </a>
                             </div>
 
                             <div className="flex items-center gap-6">
@@ -112,9 +115,12 @@ export default function Footer({ data }: FooterProps) {
                                     width={38}
                                     height={38}
                                 />
-                                <span className="text-[22px] lg:text-[22px]">
+                                <a
+                                    href={`mailto:${data.email}`}
+                                    className="text-[17.6px] lg:text-[17.6px] lg:pointer-events-none lg:cursor-default"
+                                >
                                     {data.email}
-                                </span>
+                                </a>
                             </div>
 
                             <div className="flex items-start gap-6">
@@ -125,7 +131,7 @@ export default function Footer({ data }: FooterProps) {
                                     width={38}
                                     height={38}
                                 />
-                                <div className="text-[22px] lg:text-[22px]">
+                                <div className="text-[17.6px] lg:text-[17.6px]">
                                     <div>{data.address.line1}</div>
                                     <div>{data.address.line2}</div>
                                 </div>
