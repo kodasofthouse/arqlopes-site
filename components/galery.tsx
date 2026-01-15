@@ -210,7 +210,7 @@ const GaleryCard = ({
                 {/* Content - Always visible */}
                 <div className="absolute inset-0 flex flex-col justify-end p-5 md:p-6">
                     {/* Tag */}
-                    <span className="bg-[#C17F6F] w-fit text-[#020202] text-[10px] md:text-xs text-center font-medium px-4 py-1.5 rounded-full mb-3">
+                    <span className="bg-[#045b64] w-fit text-[#ffffff] text-[10px] md:text-xs text-center font-medium px-4 py-1.5 rounded-full mb-3">
                         {project.tag}
                     </span>
                     
@@ -228,7 +228,7 @@ const GaleryCard = ({
                     <span
                         className={
                             spaceGrotesk.className +
-                            " text-[#C17F6F] text-sm md:text-base font-medium inline-flex items-center gap-2 group-hover:gap-3 transition-all"
+                            " text-zinc-200 text-sm md:text-base font-medium inline-flex items-center gap-2 group-hover:gap-3 transition-all"
                         }
                     >
                         Ver projeto
